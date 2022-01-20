@@ -211,10 +211,6 @@ CMD [ "Hello World" ]
 # EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
-16 - ENV - Serve para setar variáveis de ambiente para armazenar os valores:
-
-ENV API_URL=http://localhost:8000
-
 
 -------------------- Gerando uma imagem a partir do nosso Dockerfile -------------
 
@@ -231,5 +227,55 @@ docker run -dit -p 8000:80 --name reactdockerized react-dockerized:v1
 
 ----------------Dockerfile comandos adicionais ----------------------
 
-1 - 
+1 - LABEL - Para organizar as imagens, registrar informações de licenças, anotar relacionamentos entre containers e outras informações que façam sentido ao objetivo do container ou da aplicaçãe. As informações são registradas seguindo o parâmetro de "chave e valor", e caso uma chave esteja repetida, a última sobrescreverá as anteriores:
+
+LABEL <KEY>=<VALUE>
+LABEL maintener="Gustavo Souza <gustavogss.dev@gmail.com>"
+
+Esse valor pode ser resgatado posteriormente através do comando:
+
+ docker inspect <CONTAINER ID || NAMES> 
+ 
+ "Labels": {
+   "maintener": "Gustavo Souza <gustavogss.dev@gmail.com>"
+}
+
+
+2 - ENV - Serve para definir variáveis de ambiente no Dockerfile:
+
+ENV <ENV NAME> <ENV VALUE>
+ENV NODE_ENV production
+
+Obs. Ao rodar nossos containers, também podemos passar variáveis, basta utilizar a tag --env ou -e :
+
+docker container run \
+   --env myCat=fluffy \
+   --env myName=johnDoe \
+   <IMAGE NAME>
+   
+Essas sobrescreverão as definidas no Dockerfile caso possuam o mesmo nome.
+
+3 - USER - Serve para definir qual o usuário que irá iniciar o app no container, caso não seja definido o usuário, o Docker utilizará o root como padrão:
+
+FROM ubuntu:8
+RUN mkdir /app
+RUN groupadd -r node-user && useradd -r -s /bin/false -g node-user node-user
+WORKDIR /app
+COPY . /app
+RUN chown -R node-user:node-user /app
+USER node-user
+CMD node index.js
+
+4 - Normalmente as imagens já possuem um usuário criado para a execução de nossos apps .
+Por exemplo nas imagens node , já possuem um usuário genérico chamado "node" com os privilégios necessários, e para usá-lo, basta adicionarmos o usuário ao diretório de nosso projeto e utilizarmos a tag user :
+
+FROM node:10-alpine
+COPY . /app
+RUN chown -R node:node /app
+USER node
+CMD [“node”, “index.js”]
+
+ 5 - O Docker possui um cache de memória, que mantém armazenados, camadas de imagens após seu processo de build. E alguma alteração feita no Dockerfile, apenas aquela modificação que será buildada.  
+
+
 
