@@ -7,6 +7,18 @@ São mais de 1.500 horas de aulas on-line,  em quatro módulos: Fundamentos do D
  <details open> 
 <summary> <strong> Desenvolvimento Back-end: <strong> </summary> 
 <br>
+:black_medium_small_square: Bloco 19: Introdução - Docker:
+<br>
+<br>
+:black_medium_small_square: Manioulação e Criação de Imagens Docker:
+<br>
+<br>
+:black_medium_small_square: Orquestrando Containers com Docker Composer:
+<br>
+<br>
+:black_medium_small_square: Projeto Docker ToDoList:
+<br>
+<br>
 :black_medium_small_square: Bloco 20: Introdução - SQL:
 <br>
 :black_small_square: Banco de dados SQL
