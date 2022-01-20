@@ -1,0 +1,48 @@
+1-Contactando containers 
+
+docker container run -ti --name container1 busybox
+docker container run -ti --link container1 --name container2 busybox
+
+dentro do container2: dê um ping container1
+
+2-Para conectarmos um container já criado, basta utilizarmos o parâmetro connect :
+
+docker network connect minha-rede meu-container
+
+3-E para desconectá-lo, basta utilizar o parâmetro disconnect :
+
+docker network disconnect minha-rede meu-container
+
+4-Criando nossa rede docker bridge:
+
+docker network create --driver bridge rede-local
+docker network ls
+
+5-Criando uma imagem ubuntu modificada para ter um comando ping:
+
+docker container run -itd --name novo_container mjgargani/ubuntu-ping
+
+6-Adicionar o novo_container na rede-local:
+
+docker network connect rede-local novo_container 
+
+7-Criando container e já diretamente especificando qual rede ele irá usar:
+
+docker container run -it --name outro_container --network rede-local mjgargani/ubuntu-ping
+
+8-Para conectar outro_container ao novo container, basta dentro do outro_container:
+
+# ping novo_container
+
+9- Volumes: são formas para persistir dados em containers mesmo que sejam removidos(-v)
+
+docker run -d --name site-trybe2 -p 8881:80 -v "/home/gustavosouza/Workspace/TRYBE/trybe-exercicios/back-end/bloco-19-docker/trybe/meu-site:/usr/local/apache2/htdocs/" httpd:2.4
+
+10 - Removendo volumes:
+
+docker volume rm <VOLUME NAME>
+docker volume prune
+
+
+
+
