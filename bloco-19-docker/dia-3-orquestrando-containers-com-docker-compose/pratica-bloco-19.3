@@ -175,7 +175,126 @@ docker-compose start <SERVICE NAME>
 docker-compose logs -f --tail=100 <SERVICE NAME>
 
 
+----------------------------- Volumes com docker-compose -------------------------------
 
 
+1 - Para utilizar volumes no arquivo docker-compose.yaml :
 
+version: "3.8"
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - type: volume
+        source: mydata
+        target: /data
+        volume:
+          nocopy: true
+      - type: bind
+        source: ./static
+        target: /opt/app/static
 
+  db:
+    image: postgres:latest
+    volumes:
+      - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
+      - "dbdata:/var/lib/postgresql/data"
+
+volumes:
+  mydata:
+  dbdata:
+  
+  
+2 - Podemos definir as redes para um serviço especifico no arquivo docker-compose.yaml:
+
+version: "<VERSÃO-DO-COMPOSE>"
+services:
+  <MEU-CONTAINER-1>:
+    image: <MINHA-IMAGEM:VERSÃO>
+    networks:
+      - <NETWORK-1>
+    # ... outras configurações
+  <MEU-CONTAINER-2>:
+    build: <CAMINHO-DO-DOCKERFILE>
+    networks:
+      - <NETWORK-1>
+      - <NETWORK-1>
+    # ... outras configurações
+  <MEU-CONTAINER-N>:
+    image: <MINHA-IMAGEM:VERSÃO>
+    # ... outras configurações
+
+networks:
+  <NETWORK-1>:
+  
+  
+3 - Para isolarmos alguns serviços, por exemplo: apenas o back-end acessando o banco de dados e o front-end os back-end:
+
+version: '3'
+
+services:
+  frontend-a:
+    build: ./frontend_a
+    networks:
+      - frontend
+
+  backend-a:
+    build: ./backend_a
+    networks:
+      - backend
+      - frontend
+
+  backend-b:
+    build: ./backend_b
+    networks:
+      - backend
+      - frontend
+
+  db:
+    image: mysql
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
+  
+  
+4 - Rodando um site em Wordpress e MySql:
+
+- Criando o arquivo docker-compose.yaml:
+
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+    - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress      
+      WORDPRESS_DB_PASSWORD: wordpress
+volumes:
+  db_data:
+  
+- Em seguida dá o comando para baixar as imagens, e fazer a orquestração de nossos containers dentro do arquivo docker-compose.yaml :
+
+docker-compose up
+
+- Depois que tudo terminar é só acessar o localhost na porta 8000 para ter acesso ao ambiente do wordpress:
+
+http://localhost:8000/
