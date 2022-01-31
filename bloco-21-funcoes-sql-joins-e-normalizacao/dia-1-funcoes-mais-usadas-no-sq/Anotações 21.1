@@ -1,0 +1,173 @@
+---------------------MANIPULAÇÃO DE STRINGS 🤓 ---------------------------------------
+
+-- Converte o texto da string para CAIXA ALTA
+SELECT UCASE('Oi, eu sou uma string');
+
+-- Converte o texto da string para caixa baixa
+SELECT LCASE('Oi, eu sou uma string');
+
+-- Substitui as ocorrências de uma substring em uma string
+SELECT REPLACE('Oi, eu sou uma string', 'string', 'cadeia de caracteres');
+
+-- Retorna a parte da esquerda de uma string de acordo com o
+-- número de caracteres especificado
+SELECT LEFT('Oi, eu sou uma string', 3);
+
+-- Retorna a parte da direita de uma string de acordo com o
+-- número de caracteres especificado
+SELECT RIGHT('Oi, eu sou um string', 6);
+
+-- Exibe o tamanho, em caracteres, da string, a função LENGTH retorna o tamanho em bytes
+SELECT CHAR_LENGTH('Oi, eu sou uma string');
+
+-- Extrai parte de uma string de acordo com o índice de um caractere inicial
+-- e a quantidade de caracteres a extrair
+SELECT SUBSTRING('Oi, eu sou uma string', 5, 2);
+
+-- Se a quantidade de caracteres a extrair não for definida,
+-- então a string será extraída do índice inicial definido, até o seu final
+SELECT SUBSTRING('Oi, eu sou uma string', 5);
+
+Obs. Strings no SQL são indexadas a partir do indice 1 e não do indice 0.
+
+---------------------------- Condições em SQL --------------------------------
+
+Assim como nas linguagens de programação usamos condicionais no SQL usamos da 
+seguinte forma:
+
+-- Sintaxe:
+SELECT IF(condicao, valor_se_verdadeiro, valor_se_falso);
+
+SELECT IF(idade >= 18, 'Maior de idade', 'Menor de Idade')
+FROM pessoas;
+
+SELECT IF(aberto, 'Entrada permitida', 'Entrada não permitida')
+FROM estabelecimentos;
+
+
+SELECT first_name, IF(active, 'Cliente Ativo', 'Cliente Inativo') AS status
+FROM sakila.customer
+LIMIT 20;
+
+Para mais de uma condição usamos o CASE:
+
+
+SELECT CASE
+  WHEN condicao THEN valor
+  ELSE valor padrao
+END;
+
+SELECT
+    nome,
+    nivel_acesso,
+    CASE
+        WHEN nivel_acesso = 1 THEN 'Nível de acesso 1'
+        WHEN nivel_acesso = 2 THEN 'Nível de acesso 2'
+        WHEN nivel_acesso = 3 THEN 'Nível de acesso 3'
+        ELSE 'Usuário sem acesso'
+    END AS nivel_acesso
+FROM permissoes_usuario;
+
+-- Exemplo utilizando a tabela sakila.film:
+SELECT
+    first_name,
+    email,
+    CASE
+        WHEN email = 'MARY.SMITH@sakilacustomer.org' THEN 'Cliente de baixo valor'
+        WHEN email = 'PATRICIA.JOHNSON@sakilacustomer.org' THEN 'Cliente de médio valor'
+        WHEN email = 'LINDA.WILLIAMS@sakilacustomer.org' THEN 'Cliente de alto valor'
+        ELSE 'não classificado'
+    END AS valor
+FROM sakila.customer
+LIMIT 10;
+
+-------------------------- FUNÇÕES MATEMÁTICAS ---------------------------
+
+SELECT 5 + 5;
+SELECT 5 - 5;
+SELECT 5 * 5;
+SELECT 5 / 5;
+
+SELECT rental_duration + rental_rate FROM sakila.film LIMIT 10;
+SELECT rental_duration - rental_rate FROM sakila.film LIMIT 10;
+SELECT rental_duration / rental_rate FROM sakila.film LIMIT 10;
+SELECT rental_duration * rental_rate FROM sakila.film LIMIT 10;
+
+
+DIV  - retorna o resultado inteiro de uma divisão, ignorando as casas decimais
+de um número, mostra o valor inteiro:
+
+SELECT 10 DIV 3; -- 3
+SELECT 10 DIV 2; -- 5
+SELECT 14 DIV 3; -- 4
+SELECT 13 DIV 2; -- 6
+
+MOD - retorna o resto de uma divisão como resultado:
+
+SELECT 10 MOD 3; -- 1
+SELECT 10 MOD 2; -- 0
+SELECT 14 MOD 3; -- 2
+SELECT 13 MOD 2; -- 1
+SELECT 10.5 MOD 2; -- 0.5, ou seja, 2 + 2 + 2 + 2 + 2 = 10, restando 0.5
+
+ROUND - arredonda um valor para cima se for maior que 0.5, 
+e para baixo se for menor que 0.5:
+
+SELECT ROUND(10.4925); -- 10
+SELECT ROUND(10.5136); -- 11
+SELECT ROUND(-10.5136); -- -11
+SELECT ROUND(10.4925, 2); -- 10.49
+SELECT ROUND(10.4925, 3); -- 10.493
+
+CELL - sempre arredonda valores para cima:
+
+SELECT CEIL(10.51); -- 11
+SELECT CEIL(10.49); -- 11
+SELECT CEIL(10.2); -- 11
+
+FLOOR - sempre arredonda valores para baixo:
+
+SELECT FLOOR(10.51); -- 10
+SELECT FLOOR(10.49); -- 10
+SELECT FLOOR(10.2); -- 10
+
+POW - serve para exponenciação:
+
+SELECT POW(2, 2); -- 4
+SELECT POW(2, 4); -- 16
+
+SQRT - serve para calcular a raiz quadrada de um número:
+
+SELECT SQRT(9); -- 3
+SELECT SQRT(16); -- 4
+
+RAND - para gerar valores aleatórios:
+
+-- Para gerar um valor aleatório entre 0 e 1:
+SELECT RAND();
+
+-- Para gerar um valor entre 7 e 13:
+SELECT ROUND(7 + (RAND() * 6));
+
+-- O cálculo que é feito é o seguinte: (7 + (0.0 a 1.0 * 6))
+
+
+------------------------ Trabalhando com Datas ---------------------------------
+
+CURENT_DATE - serve para calcular a data atual:
+
+SELECT CURRENT_DATE(); -- YYYY-MM-DD
+
+
+NOW - -serve para calcular a data atual no momento com as horas, minutos e segundos quando
+foi feito a consulta.
+
+SELECT NOW(); -- YYYY-MM-DD HH:MM:SS
+
+
+------------------------------- Variaveis no SQL ----------------------------------
+
+@variavel - @age 
+
+-Para seta variáveis
+SET @age = 25 
