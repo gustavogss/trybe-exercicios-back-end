@@ -1,0 +1,1 @@
+SELECT MAX(SALARY) AS 'Maior Salário' FROM employees;
