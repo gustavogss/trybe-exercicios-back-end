@@ -17,12 +17,17 @@ SELECT LEFT('Oi, eu sou uma string', 3);
 -- número de caracteres especificado
 SELECT RIGHT('Oi, eu sou um string', 6);
 
+SELECT RIGHT('Oi, eu sou um string', -6); 
+Ele irá fazer no sentido inverso a partir da esquerda
+
 -- Exibe o tamanho, em caracteres, da string, a função LENGTH retorna o tamanho em bytes
 SELECT CHAR_LENGTH('Oi, eu sou uma string');
 
 -- Extrai parte de uma string de acordo com o índice de um caractere inicial
 -- e a quantidade de caracteres a extrair
 SELECT SUBSTRING('Oi, eu sou uma string', 5, 2);
+
+SELECT SUBSTRING('string', posicao, quantidade_de_caracteres);
 
 -- Se a quantidade de caracteres a extrair não for definida,
 -- então a string será extraída do índice inicial definido, até o seu final
@@ -116,8 +121,8 @@ e para baixo se for menor que 0.5:
 SELECT ROUND(10.4925); -- 10
 SELECT ROUND(10.5136); -- 11
 SELECT ROUND(-10.5136); -- -11
-SELECT ROUND(10.4925, 2); -- 10.49
-SELECT ROUND(10.4925, 3); -- 10.493
+SELECT ROUND(10.4925, 2); -- 10.49 (pega duas casas depois da vírgula)
+SELECT ROUND(10.4925, 3); -- 10.493 (pega três casas depois da vírgula)
 
 CELL - sempre arredonda valores para cima:
 
@@ -131,7 +136,7 @@ SELECT FLOOR(10.51); -- 10
 SELECT FLOOR(10.49); -- 10
 SELECT FLOOR(10.2); -- 10
 
-POW - serve para exponenciação:
+POW - serve para potenciação:
 
 SELECT POW(2, 2); -- 4
 SELECT POW(2, 4); -- 16
@@ -143,11 +148,11 @@ SELECT SQRT(16); -- 4
 
 RAND - para gerar valores aleatórios:
 
--- Para gerar um valor aleatório entre 0 e 1:
+-- Para gerar um valor aleatório entre 0 e 1: 0 zero fica incluso, e 1 não.
 SELECT RAND();
 
 -- Para gerar um valor entre 7 e 13:
-SELECT ROUND(7 + (RAND() * 6));
+SELECT ROUND(7 + (RAND() * 6)); -- gera um valor aleatório arredondado 
 
 -- O cálculo que é feito é o seguinte: (7 + (0.0 a 1.0 * 6))
 
