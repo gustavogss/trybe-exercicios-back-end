@@ -163,12 +163,32 @@ CURENT_DATE - serve para calcular a data atual:
 
 SELECT CURRENT_DATE(); -- YYYY-MM-DD
 
-
 NOW - -serve para calcular a data atual no momento com as horas, minutos e segundos quando
 foi feito a consulta.
 
 SELECT NOW(); -- YYYY-MM-DD HH:MM:SS
 
+SELECT YEAR(CURRENT_DATE()); -- retorna o ano atual
+
+SELECT HOUR(NOW()); -- retorna a hora atual
+
+
+DATEDIFF - serve para calcular a diferença de datas, sempre a última data vem primeiro na 
+diferença:
+
+-- 30, ou seja, a primeira data é 30 dias depois da segunda
+SELECT DATEDIFF('2020-01-31', '2020-01-01');
+
+-- -30, ou seja, a primeira data é 30 dias antes da segunda
+SELECT DATEDIFF('2020-01-01', '2020-01-31');
+
+TIMEDIFF - serve para calcular a diferença de tempo ou datas também junto com o tempo:
+
+-- -01:00:00, ou seja, há 1 hora de diferença entre os horários
+SELECT TIMEDIFF('08:30:10', '09:30:10');
+
+-- -239:00:00, ou seja, há uma diferença de 239 horas entre as datas
+SELECT TIMEDIFF('2021-08-11 08:30:10', '2021-08-01 09:30:10');
 
 ------------------------------- Variaveis no SQL ----------------------------------
 
@@ -176,3 +196,52 @@ SELECT NOW(); -- YYYY-MM-DD HH:MM:SS
 
 -Para seta variáveis
 SET @age = 25 
+
+--------------------------------- FUNÇÕES DE AGREGAÇÃO ------------------------------
+
+AVG , MIN , MAX , SUM e COUNT:
+
+SELECT AVG(replacement_cost) FROM sakila.film; -- 19.984000 (Média entre todos registros)
+SELECT MIN(replacement_cost) FROM sakila.film; -- 9.99 (Menor valor encontrado da coluna)
+SELECT MAX(replacement_cost) FROM sakila.film; -- 29.99 (Maior valor encontrado)
+SELECT SUM(replacement_cost) FROM sakila.film; -- 19984.00 (Soma de todos registros)
+SELECT COUNT(replacement_cost) FROM sakila.film; -- 1000 registros encontrados (Quantidade)
+
+--------------------------------- FILTRANDO E AGRUPANDO -----------------------------
+
+GROUP BY - serve para agrupar colunas:
+
+SELECT coluna(s) FROM tabela
+GROUP BY coluna(s);
+
+SELECT first_name FROM sakila.actor
+GROUP BY first_name; 
+
+--Retorna todos os atores com primeiro nome. Caso haja atores com
+nomes iguais, ele não retornará dados duplicados.
+
+SELECT first_name, COUNT(*) FROM sakila.actor
+GROUP BY first_name;
+
+-- Retorna quantos registros existem na tabela de cada nome registrado
+
+-- Média de duração de filmes agrupados por classificação indicativa
+SELECT rating, AVG(length)
+FROM sakila.film
+GROUP BY rating;
+
+-- Valor mínimo de substituição dos filmes agrupados por classificação indicativa
+SELECT rating, MIN(replacement_cost)
+FROM sakila.film
+GROUP BY rating;
+
+-- Valor máximo de substituição dos filmes agrupados por classificação indicativa
+SELECT rating, MAX(replacement_cost)
+FROM sakila.film
+GROUP BY rating;
+
+-- Custo total de substituição de filmes agrupados por classificação indicativa
+SELECT rating, SUM(replacement_cost)
+FROM sakila.film
+GROUP by rating;
+

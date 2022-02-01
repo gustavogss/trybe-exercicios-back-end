@@ -49,4 +49,29 @@ SELECT CEIL(85.234) AS 'media_para_cima'
 
 ----------------------------------------------------------------------------------
 
+SELECT DATEDIFF('2030-01-20', '2022-02-01'); -- 2910
+SELECT TIMEDIFF('10:25:45', '11:00:00'); --00:34:15
+
+----------------------------------------------------------------------------------
+
+SELECT AVG(rental_duration) AS 'Média de Duração'
+FROM film; --4.9850
+
+SELECT MIN(rental_duration) AS 'Duração Minima'
+FROM film; --3
+
+SELECT MAX(rental_duration) AS 'Duração Máxima'
+FROM film; --7
+
+SELECT SUM(rental_duration) AS 'Tempo de Exibição Total'
+FROM film; --4985
+
+SELECT COUNT(*) FROM film; --1000
+
+---------------------------------------------------------------------------------------
+
+
+
+
+
 
