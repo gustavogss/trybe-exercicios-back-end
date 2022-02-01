@@ -245,3 +245,30 @@ SELECT rating, SUM(replacement_cost)
 FROM sakila.film
 GROUP by rating;
 
+HAVING - serve para para filtrar resultados agrupados, assim como usamos o 
+SELECT...WHERE para filtrar resultados individuais.
+
+A query a seguir busca o nome e a quantidade de nomes cadastrados na tabela 
+sakila.actor e os agrupa por quantidade. Por fim, filtramos os resultados agrupados
+usando o HAVING , para que somente os nomes que estão cadastrados mais de duas vezes 
+sejam exibidos.
+
+SELECT first_name, COUNT(*)
+FROM sakila.actor
+GROUP BY first_name
+HAVING COUNT(*) > 2;
+
+
+SELECT first_name, COUNT(*) AS nomes_cadastrados
+FROM sakila.actor
+GROUP BY first_name
+HAVING nomes_cadastrados > 2;
+
+Observação: o alias não funciona com strings para o HAVING, então use o underline 
+("_") para separar palavras, ou seja, o exemplo abaixo não vai funcionar:
+
+SELECT first_name, COUNT(*) AS 'nomes cadastrados'
+FROM sakila.actor
+GROUP BY first_name
+HAVING 'nomes cadastrados' > 2;
+
