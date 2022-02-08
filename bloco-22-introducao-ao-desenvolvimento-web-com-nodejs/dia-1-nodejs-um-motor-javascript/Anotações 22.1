@@ -113,4 +113,45 @@ Publicar um pacote como público no npm é gratuito e não há um limite de paco
 assinaturas, caso desejemos hospedar pacotes de forma privada, ou seja, pacotes sob os quais só nós temos o controle de acesso.
 
 
+1 - npm init - nos permite criar, de forma rápida e simplificada, um novo pacote Node.js na pasta onde é executado. E o npm init -y criar
+ um pacote com todos os valores padrão.
+
+2 - npm run - faz com que o npm execute um determinado script configurado no package.json.
+
+Para ter um script chamado lint que execute a ferramenta de linter a nossa chave scripts fica assim:
+
+{
+  "scripts": {
+    "lint": "eslint ."
+  }
+}
+
+Para executar esse comando: npm run lint
+
+3 - npm start - age como um "atalho" para o comando npm run start , uma vez que sua função é executar o script start definido no package.json 
+
+Por exemplo, se tivermos um pacote que calcula o IMC (Índice de Massa Corporal) de uma pessoa cujo código está no arquivo imc.js , é comum
+criarmos o seguinte script:
+
+{
+  // ...
+  "scripts": {
+    "start": "node imc.js"
+  }
+  // ...
+}
+
+4 - npm install - responsável por baixar e instalar pacotes Node.js do NPM para o nosso pacote.
+
+- Formas de utilizar o npm install: 
+
+* npm install <nome do pacote> : Baixa o pacote do registro do NPM e o adiciona ao objeto dependencies do package.json;
+
+* npm install -D <nome do pacote> : Baixa o pacote do registro do NPM, porém o adiciona ao objeto devDependencies do package.json 
+, indicando que o pacote em questão não é necessário para executar a aplicação, mas é necessário para desenvolvimento, ou seja, 
+para alterar o código daquela aplicação. Isso é muito útil ao colocar a aplicação no ar, pois pacotes marcados como devDependencies 
+podem ser ignorados, já que vamos apenas executar a aplicação, e não modificá-la.
+
+* npm install : Baixa e instala todos os pacotes listados nos objetos de dependencies e devDependencies do package.json . Sempre deve 
+ser executado ao clonar o repositório de um pacote para garantir que todas as dependências desse pacote estão instaladas.
 
