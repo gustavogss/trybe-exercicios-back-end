@@ -1,0 +1,22 @@
+O javaScript é uma linguagem single-threaded , ou seja, executa apenas uma operação de cada vez.
+
+Sendo assim, para que possamos escrever aplicações com boa performance e um boa experiência para o usuário, é importante sabermos como realizar operações demoradas de forma assíncrona , ou seja, fora do contexto de execução do restante do JavaScript. 
+
+Toda vez que precisarmos que algo seja processado em segundo plano, devemos chamar uma callback
+
+fs.reaFile - realiza a leitura de um arquivo e, quando termina, chama uma função de callback:
+
+const fs = require('fs');
+
+fs.readFile('./arquivo.txt', (err, content) => {
+  if (err) {
+    console.error(`Erro ao ler o arquivo: ${err.message}`);
+    return;
+  }
+
+  console.log(`Arquivo lido com sucesso. Conteúdo: ${content.toString('utf8')}`);
+});
+
+No código acima, passamos uma função para readFile , à qual damos o nome de callback . Essa função de callback recebe dois parâmetros: o primeiro, que chamamos de err , é um erro que pode ter ocorrido durante a leitura do arquivo. Caso nenhum erro tenha ocorrido, esse parâmetro será undefined . O segundo parâmetro é, nesse caso, o conteúdo do arquivo, em forma de uma sequência de bytes, que chamamos de content . Caso ocorra um erro na leitura do arquivo, esse parâmetro será undefined.
+
+
