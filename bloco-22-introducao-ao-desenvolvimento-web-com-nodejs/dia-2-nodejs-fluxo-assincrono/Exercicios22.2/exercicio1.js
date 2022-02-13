@@ -16,3 +16,7 @@ function numbers(a,b,c){
 numbers(9, 8, 7)
   .then(resolve => console.log(resolve))
   .catch(error => console.log(error))
+
+  function randomNumbers() {
+    return Math.floor(Math.random() * 100 + 1);
+  }
