@@ -131,28 +131,111 @@ durante a leitura do arquivo.
 
 Com funções síncronas, como readFileSync , você deve tratar explicitamente os erros que
 puderem acontecer. Nesse exemplo, usamos um bloco try...catch para capturar quaisquer erros
-que possam acontecer durante a leitura do arquivo e imprimimos uma mensagem para o usuário no terminal.
+que possam acontecer durante a leitura do arquivo e imprimimos uma mensagem para o usuário no 
+terminal.
 
 O método fornecido pelo módulo fs para leitura assíncrona de arquivos é o fs.readFile. 
 Na versão padrão do fs, a função readFile aceita um callback, que é chamado quando a 
-leitura do arquivo termina.
+leitura do arquivo termina:
 
-fs.readFile - é responsável por ler arquivos e trazer seu conteúdo para dentro do Node.js.
+3 - fs.readFile - é responsável por ler arquivos e trazer seu conteúdo para dentro do Node.js.
 
 Sempre que precisarmos ler arquivos de forma assíncrona, podemos utilizar o método readFile 
-do módulo ('fs').promises.
+do módulo ('fs').promises:
 
-writeFile - serve para alterar o conteúdo dentro do arquivo.
+const fs = require('fs').promises;
 
-Promise.all - é um método da Promise que nos permite passar um array de Promises 
-e receber de volta uma única Promise. Ela será resolvida com os resultados de todas 
-as Promises, assim que todas elas forem resolvidas. Esse método também nos permite 
-utilizar um único catch, que será chamado caso qualquer uma das Promises seja
- rejeitada.
+const nomeDoArquivo = 'meu-arquivo.txt';
 
- Se o arquivo não existir, ele é criado. Caso contrário, ele é reescrito, ou seja, 
- tem seu conteúdo apagado antes de o novo conteúdo ser escrito. A flag 'wx' , por 
- exemplo, funciona como 'w' , mas lança um erro caso o arquivo já exista:
+fs.readFile(nomeDoArquivo, 'utf8')
+  .then((data) => {
+    console.log(`Conteúdo do arquivo: ${data}`);
+  })
+  .catch((err) => {
+    console.error(`Não foi possível ler o arquivo ${nomeDoArquivo}\n Erro: ${err}`);
+    process.exit(1); // Encerra a execução do script e informa ao sistema operacional que houve um erro com código
+  });
 
- 
+4 - writeFile - serve para alterar o conteúdo dentro do arquivo:
 
+const fs = require('fs').promises;
+
+fs.writeFile('./meu-arquivo.txt', 'Meu textão')
+  .then(() => {
+    console.log('Arquivo escrito com sucesso!');
+  })
+  .catch((err) => {
+    console.error(`Erro ao escrever o arquivo: ${err.message}`);
+  });
+
+
+5 - Async/Await - Às vezes queremos apenas pegar um resultado, sem essa API de Promises. 
+E utilizando o async / await, o código fica com uma sintaxe quase idêntica à sintaxe 
+utilizada para código síncrono. Mas para utilizar esses métodos, precisamos criar uma função:
+
+const fs = require('fs').promises;
+
+async function main() {
+  try {
+    await fs.writeFile('./meu-arquivo.txt', 'Meu textão');
+    console.log('Arquivo escrito com sucesso!');
+  } catch (err) {
+    console.error(`Erro ao escrever o arquivo: ${err.message}`);
+  }
+}
+
+main()
+
+Obs. Não temos mais nenhum .then. E todo o tratamento de erros e sucesso é feito com um try
+... catch , da mesma forma que fizemos quando estávamos utilizando o fs.readFileSync.
+
+6 - Promise.all - serve para rodar promessas simultaneamente. É um método da Promise que nos 
+permite passar um array de Promises e receber de volta uma única Promise. Ela será resolvida
+com os resultados de todas as Promises, assim que todas elas forem resolvidas. Esse método 
+também nos permite utilizar um único catch, que será chamado caso qualquer uma das Promises
+seja rejeitada. 
+
+ const fs = require('fs').promises;
+
+Promise.all([
+  fs.readFile('file1.txt'),
+  fs.readFile('file2.txt'),
+  fs.readFile('file3.txt'),
+])
+  .then(([file1, file2, file3]) => {
+    const fileSizeSum = file1.byteLength + file2.byteLength + file3.byteLength;
+    console.log(`Lidos 3 arquivos totalizando ${fileSizeSum} bytes`);
+  })
+  .catch((err) => {
+    console.error(`Erro ao ler arquivos: ${err.message}`);
+  });
+
+Obs. Estamos lendo os três arquivos ao mesmo tempo, e nosso .then será executado quando a 
+leitura de todos eles terminar, recebendo como parâmetro um array com o resultado de cada
+uma das Promises.
+
+-------- Atributos adicionais na utilização de métodos de leitura e escrita no fs ---------
+
+1 - Assim como no writeFile e readFile, pode ser passado um terceiro parâmetro para especificar
+algumas opções na leitura e escrita de arquivos.
+
+A flag w - especifica que o arquivo deve ser aberto para escrita.
+
+Se o arquivo não existir, ele é criado. Caso contrário, ele é reescrito, ou seja, tem seu 
+conteúdo apagado antes do novo conteúdo ser escrito. 
+
+A flag 'wx' , por funciona como 'w' , mas lança um erro caso o arquivo já exista.
+
+const fs = require('fs').promises;
+
+// A flag wx abre o arquivo para escrita **apenas** caso ele não exista. Caso o contrário, um erro será lançado
+
+fs.writeFile('./meu-arquivo.txt', 'Eu estive aqui :eyes:', { flag: 'wx' })
+  .then(() => {
+    console.log('Arquivo salvo');
+  })
+  .catch((err) => {   
+    console.error('err'); // Se o arquivo existir, um erro é retornado  
+  });
+
+  
