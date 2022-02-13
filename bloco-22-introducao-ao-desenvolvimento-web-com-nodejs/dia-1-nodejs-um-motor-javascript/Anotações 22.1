@@ -1,6 +1,13 @@
-Node.js surgiu do V8, que é a ferramenta do Google Chrome que ler e executa as 
-instruções em JavaScript, ou seja, interpreta o código, é um runtime. 
-Por isso dizemos que o NodeJs é um runtime do Javascript.
+Node.js surgiu do V8, que é a ferramenta do Google Chrome que ler e executar as 
+instruções em JavaScript, ou seja, interpreta o código, é um runtime, ou seja, o 
+NodeJs é um runtime do Javascript.
+
+Toda leitura e escrita que o Node realiza, tanto no disco quanto na rede, é feita de 
+forma não bloqueante, ou seja, quando o servidor recebe uma requisição e precisa, 
+buscar dados no banco de dados, as demais requisições não precisam esperar que 
+a primeira termine para que possam ser atendidas. O Node.js realiza todas as suas 
+operações de entrada e saída de dados de forma assíncrona , utilizando processamento 
+concorrente.
 
 Ele possui três tipos de módulos: internos, locais e de terceiros.
 
@@ -40,10 +47,11 @@ Existem dois sistemas de módulos difundidos na comunidade JavaScript:
  transpiladores, como o Babel, ou supersets da linguagem, como o TypeScript, para 
  que esse recurso esteja disponível.
 
- - Módulos CommonJS - é o sistema de módulos implementado pelo Node.js nativamente. Para exportar 
- algo no sistema CommonJS, utilizamos a variável global module.exports
+ - Módulos CommonJS - é o sistema de módulos implementado pelo Node.js nativamente. 
+ 
+ Para exportar algo no sistema CommonJS, utilizamos a variável global module.exports
 
- const brl = 5.37;
+const brl = 5.37;
 module.exports = brl;
 
 Um módulo possui um escopo isolado, ou seja, suas funções, variáveis, classes e demais definições 
@@ -156,3 +164,5 @@ podem ser ignorados, já que vamos apenas executar a aplicação, e não modific
 ser executado ao clonar o repositório de um pacote para garantir que todas as dependências desse pacote estão instaladas.
 
 Obs. todo pacote Node.js deve ter um arquivo index.js 
+
+Pipelines são scripts que chamam outros scripts.

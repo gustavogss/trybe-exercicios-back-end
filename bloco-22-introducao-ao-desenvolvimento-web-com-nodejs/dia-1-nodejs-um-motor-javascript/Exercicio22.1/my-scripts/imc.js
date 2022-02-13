@@ -1,9 +1,9 @@
 const readline = require("readline-sync");
 
 const altura = readline.questionFloat("Qual é a sua altura: ");
-const peso = readline.questionFloat("Qual é o seu peso:");
+const peso = readline.questionInt("Qual é o seu peso:");
 
-const imc = peso / Math.pow(altura, 2).toFixed(2);
+const imc = peso / Math.pow(altura, 2);
 
 switch (imc){
   case (imc < 18.5):
