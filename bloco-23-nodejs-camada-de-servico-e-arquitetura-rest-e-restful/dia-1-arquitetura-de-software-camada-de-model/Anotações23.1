@@ -1,29 +1,46 @@
-Arquitetura de Software - é a organização de um sistema de software, quais são seus componentes, como eles conversam entre si, como as responsabilidades são distribuídas, quais as camadas que compõe esse software.
+Arquitetura de Software - é a organização de um sistema de software, seus componentes, 
+relacionamentos, responsabilidades, e quais camadas possui.
 
 Regras de negócio - são os códigos que controlam o comportamento das aplicações.
 
 Na Arquitetura MSC temos três tipos de camadas:
 
-- Camada de Modelo (M): Onde iremos executar as operações do banco de dados, como criar conexões e executar queries.
+- Camada de Modelo (M): Onde iremos executar as operações do banco de dados, como criar 
+ e executar queries.
 
-- Camada de Serviço (S): Onde estruturaremos as nossas regras de negócio, geralmente é quem chama os métodos definidos na camada de modelo.
+- Camada de Serviço (S): Onde estruturaremos as nossas regras de negócio, geralmente é 
+quem chama os métodos definidos na camada de modelo.
 
-- Camada de Controladores (C): Interface mais próxima da pessoa usuária ou de uma requisição, vai processar e chamar as devidas funções da camada de serviço.
+- Camada de Controladores (C): Interface mais próxima da pessoa usuária ou de uma 
+requisição, vai processar e chamar as devidas funções da camada de serviço.
 
-Obs.: Algumas vezes a camada de Controladores pode se comunicar direto com a camada de Modelo, dispensando o uso da camada de Serviço, principalmente em situações em que não temos uma regra de negócio tão complexa. Mas cuidado, isso deve ser usado apenas em casos específicos, e uma vez que um endpoint exija o uso de uma camada de Serviço, o ideal é que todos os outros também utilizem essa camada, para que a arquitetura seja respeitada e a aplicação não se torne "bagunçada".
+Obs.: Algumas vezes a camada de Controladores pode se comunicar direto com a camada de 
+Modelo, dispensando o uso da camada de Serviço, principalmente em situações em que não 
+temos uma regra de negócio tão complexa. 
+Mas cuidado, isso deve ser usado apenas em casos específicos, e uma vez que um endpoint 
+exija o uso de uma camada de Serviço, o ideal é que todos os outros também utilizem essa
+ camada, para que a arquitetura seja respeitada e a aplicação não se torne "bagunçada".
 
 
 ----------------------------------- CAMADA MODEL ------------------------------------
 
-MODEL - é a camada onde manipulamos e definimos a estrutura dos nossos dados. Todo acesso aos dados deve passar por essa camada. É responsável por abstrair completamente os detalhes de acesso e armazenamento, fornecendo somente uma API que permita requisitar e manipular esses dados. Por exemplo, é responsabilidade da camada de models estabelecer uma conexão com o banco de dados.
+MODEL - é a camada onde manipulamos e definimos a estrutura dos nossos dados. Todo 
+ aos dados deve passar por essa camada. É responsável por abstrair completamente os 
+ detalhes de acesso e armazenamento, fornecendo somente uma API que permita requisitar 
+ e manipular esses dados. Por exemplo, é responsabilidade da camada de models estabelecer
+  uma conexão com o banco de dados.
 
-O model se encarrega de fazer o mapeamento dos dados armazenados para as entidades existentes no domínio do seu negócio.
+O model se encarrega de fazer o mapeamento dos dados armazenados para as entidades 
+existentes no domínio do seu negócio.
 
-A camada Model deve ser desacoplada das outras camadas da aplicação para não haver conflitos. Exemplo de um model:
+A camada Model deve ser desacoplada das outras camadas da aplicação para não haver 
+conflitos.
+
+- Exemplo de um model:
 
 // userModel.js
 
- const db = require('./db'); // Arquivo "fictício" que representa a conexão com o banco
+ const db = require('./db'); // Arquivo que representa a conexão com o banco
 
     async function getUser (username) {
         return db.findOne({ username })
@@ -55,12 +72,11 @@ A camada Model deve ser desacoplada das outras camadas da aplicação para não 
     
   - Podemos utilizar esse model em um middleware também: 
 
-
     // getUserMiddleware.js
 
     const userModel = require('./userModel');
 
-    function getUserMiddleware (req, res, next) {
+    asyc function getUserMiddleware (req, res, next) {
         const { username } = req.body;
 
     try {
@@ -77,14 +93,15 @@ A camada Model deve ser desacoplada das outras camadas da aplicação para não 
     }
 
 
-- Obs. Dessa forma, caso nossos usuários passem a estar armazenados em outro lugar, como num arquivo, ou num outro banco de dados, nós só precisaremos alterar o arquivo userModel.js e, automaticamente, tudo volta a funcionar.
+- Obs. Dessa forma, caso nossos usuários passem a estar armazenados em outro lugar, como 
+num arquivo, ou num outro banco de dados, nós só precisaremos alterar o arquivo userModel.js e, automaticamente, tudo volta a funcionar.
 
 
------------------------------------ MODEL COM MYSQL ------------------------------
+----------------------------------- MODEL COM MYSQL ------------------------------------
 
 1 - Criar o banco com as tabelas e dados
 
-2 - Criar a do arquivo, e executar o comando: npm init -y
+2 - Criar a pasta do arquivo, e executar o comando: npm init -y
 
 3 - Instalar o mysql na pasta do projeto: npm install mysql2
 
@@ -92,7 +109,8 @@ A camada Model deve ser desacoplada das outras camadas da aplicação para não 
 
 5 - Instalar o nodemon com modo de desenvolvimento: npm install nodemon -D
 
-6 - Depois de tudo instalado, entra no vscode, e criar a pasta module com o arquivo connection.js para fazer a conexão com bd.
+6 - Depois de tudo instalado, entra no vscode, e criar a pasta module com o arquivo
+ connection.js para fazer a conexão com bd.
 
 /model/connection.js
 
@@ -102,7 +120,8 @@ const connection = mysql.createPool({
   user: 'root',
   password: '12345678',
   host: 'localhost',
-  database: 'model_example'
+  database: 'model_example',
+  port: 3364,
 });
 
 module.exports = connection;
@@ -122,6 +141,7 @@ const getAll = async () => {
 module.exports = {
   getAll,
 };
+
 
 
 
