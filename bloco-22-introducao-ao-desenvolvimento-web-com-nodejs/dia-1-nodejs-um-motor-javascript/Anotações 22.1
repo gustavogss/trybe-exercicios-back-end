@@ -2,12 +2,16 @@ Node.js surgiu do V8, que é a ferramenta do Google Chrome que ler e executar as
 instruções em JavaScript, ou seja, interpreta o código, é um runtime, ou seja, o 
 NodeJs é um runtime do Javascript.
 
+Runtime, engine ou interpretador é o software responsável por interpretar o código.
+
 Toda leitura e escrita que o Node realiza, tanto no disco quanto na rede, é feita de 
 forma não bloqueante, ou seja, quando o servidor recebe uma requisição e precisa, 
 buscar dados no banco de dados, as demais requisições não precisam esperar que 
 a primeira termine para que possam ser atendidas. O Node.js realiza todas as suas 
 operações de entrada e saída de dados de forma assíncrona , utilizando processamento 
 concorrente.
+
+O Node possui módulos independentes com escopo próprio, variavéis, fuunções, classes.
 
 Ele possui três tipos de módulos: internos, locais e de terceiros.
 
@@ -74,6 +78,7 @@ Com o module.exports estamos exportando tanto o valor brl quanto a função
 usdToBrl que converte um valor real em dolar
 
 O Node já procura por arquivos terminados em .js ou .json e os considera como módulos.
+
 
 ------------------------------------- Importando Módulos --------------------------------
 
@@ -166,3 +171,17 @@ ser executado ao clonar o repositório de um pacote para garantir que todas as d
 Obs. todo pacote Node.js deve ter um arquivo index.js 
 
 Pipelines são scripts que chamam outros scripts.
+
+---------------------------------------- MODULO REDLINESYC ------------------------------------
+
+ O readline-sync é um módulo de terceiros, que serve para ler arquivos. Para podermos utilizar 
+ devemos instalá-lo em nosso projeto node, e depois importá-lo.
+
+const readline = require('readline-sync');
+
+const name = readline.question('Qual seu nome? ');
+const age = readline.questionInt('Qual sua idade? ');
+
+A função question interpreta a resposta como uma string comum, ao passo que a função questionInt
+converte a resposta para número utilizando o parseInt e retorna um erro caso a pessoa tente 
+inserir algo que não seja um número válido.
