@@ -1,0 +1,46 @@
+Arguments: 
+  /home/gustavosouza/.nvm/versions/node/v14.19.0/bin/node /usr/local/bin/yarn global bin
+
+PATH: 
+  /home/gustavosouza/.nvm/versions/node/v14.19.0/bin:/home/gustavosouza/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/gustavosouza/Android/Sdk/emulator:/home/gustavosouza/Android/Sdk/tools:/home/gustavosouza/Android/Sdk/tools/bin:/home/gustavosouza/Android/Sdk/platform-tools:/home/gustavosouza/android-studio/bin:/home/gustavosouza/Android/Sdk/emulator:/home/gustavosouza/Android/Sdk/tools:/home/gustavosouza/Android/Sdk/tools/bin:/home/gustavosouza/Android/Sdk/platform-tools:/home/gustavosouza/android-studio/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/gustavosouza/Workspace/TRYBE/EXERCÍCIOS/trybe-exercicios-back-end/bloco-24-nodejs-orm-autenticacao/dia-3-jwt-json-web-token/Pratica24.3/User/package.json: Unexpected token } in JSON at position 186
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "User",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "login.js",
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "jsonwebtoken": "^8.5.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
