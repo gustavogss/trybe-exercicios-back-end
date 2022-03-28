@@ -2,10 +2,13 @@
 // let age:number = 47;
 // let isStudent:boolean = true;
 
-import {addStudent, getStudent, printStudents} from './students/students';
+import {addStudent, getStudent, sayHello} from './students/students';
 
+function main():any { //o any retorna qualquer coisa
 addStudent('Gustavo');
 console.log('\nStudents:\n', getStudent()); //['Gustavo']
 const students = getStudent();
 console.log('\nStudents:\n',(students));
-students.forEach((student)=>printStudents(student));
+sayHello(students);
+}
+main()

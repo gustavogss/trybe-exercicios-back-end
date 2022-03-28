@@ -1,14 +1,13 @@
-const students: (string|number)[] = []
+const students: (string)[] = []
 // const students: any[] = [] poderia ser um array de qualquer tipo
 
-export const addStudent = (student:string|number)=> students.push(student);
+export const addStudent = (student:string)=> students.push(student);
 export const getStudent = ()   => students;
-
-export const printStudents = (student: string|number) => {
-  if(typeof student=== 'string'){
-    console.log(student.toUpperCase());
-  }else{
-    console.log(student);
+export const sayHello = (students: string[] | string) => {
+  if(Array.isArray(students)){
+    students.forEach((student)=> console.log(`Hello, ${student}`));
+  } else{
+    console.log(`Hello, ${students}`)
   }
-}
+};
 
