@@ -1,6 +1,5 @@
 O TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft
-
-Ela é um superconjunto (superset) do JavaScript, que veio para resolver suas limitações.
+É um superconjunto (superset) do JavaScript, que veio para resolver suas limitações.
 Seu grande recurso é o sistema de tipos.
 
 Aqui podemos identificar o tipo de dado em variáveis, parâmetros ou retornos de funções
