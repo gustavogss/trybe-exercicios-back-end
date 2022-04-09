@@ -2,7 +2,7 @@
 
 Programação Orientada a Objetos é um modelo de análise, projeto e programação baseado na 
 aproximação entre o mundo real e o mundo virtual, através da criação e interação entre 
-objetos, atributos, códigos, métodos, entre outros.
+objetos, atributos, classes, métodos, entre outros.
 
 É um tipo de paradigma de programação que se baseia nos conceitos de classe, objeto, herança, 
 encapsulamento e polimorfismo. 
@@ -79,7 +79,7 @@ Resumindo, o encapsulamento é útil na hora de simplificar a programação, bem
 os dados sensíveis ou sigilosos. Também é importante frisar que o desenvolvimento das 
 aplicações passa a ficar mais ágil e com possibilidade de reuso.
 
-3 - Herança - permite que classes filhas , que herdam métodos e atributos de outra classe 
+3 - Herança - permite que classes filhas, que herdam métodos e atributos de outra classe 
 ( super classe ), sejam criadas.
 
 4 - Polimorfismo - permite que coisas diferentes aconteçam ao chamarmos objetos de classes 
