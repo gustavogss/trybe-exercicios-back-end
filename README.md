@@ -1,160 +1,106 @@
-![trybepreto.png](https://gustavosouza.dev.br/images/images/2021/07/30/trybepreto.png)
+# Módulo Backend - Trybe
 
-Este repositório contém todos os exercicios desenvolvidos por <a href="https://www.linkedin.com/in/gustavosouza-jp/">Gustavo Souza</a> durante o curso de formação em desenvolvimento fullstack na <a href="https://www.betrybe.com/">Trybe</a>
+Este repositório contém todas as anotações, práticas e exercicios do Módulo de Backend, implementados por <a href="https://www.linkedin.com/in/gustavosouza-jp/">Gustavo Souza</a> durante o curso de formação em desenvolvimento fullstack na <a href="https://www.betrybe.com/">Trybe</a>
+ 
+ ### Bloco 19 - Docker: 
+ - [x] Utilizando Containers
+ - [x] Manipulação e Criação de Imagens Docker
+ - [x] Orquestrando Containers com Docker Compose
+ 
+ <strike>Projeto Docker ToDoList</strike> 
 
-São mais de 1.500 horas de aulas on-line,  em quatro módulos: Fundamentos do Desenvolvimento Web, Desenvolvimento Front-end, Desenvolvimento Back-end e Ciência da Computação. Além de softkills e Metódos Agéis.
+ ### Bloco 20 - Introdução a SQL: 
+ - [x] Banco de Dados Relacionais
+ - [x] Encontrando Dados em um banco de dados
+ - [x] Filtrando Dados de forma específica
+ - [x] Manipulando Tabelas
+ 
+ <strike>Projeto All For One</strike>
+ 
+  ### Bloco 21 - Funções, JOIN, Normalização SQL: 
+ - [x] Funções mais usadas no SQL
+ - [x] Descomplicando JOINS
+ - [x] Transformando ideias em um modelo de banco de dados
 
- <details open> 
-<summary> <strong> Desenvolvimento Back-end: <strong> </summary> 
-<br>
-:black_medium_small_square: Bloco 19: Introdução - Docker:
-<br>
-:black_small_square: Manioulação e Criação de Imagens Docker:
-<br>
-:black_small_square: Orquestrando Containers com Docker Composer:
-<br>
-:black_small_square: Projeto Docker ToDoList:
-<br>
-<br>
-:black_medium_small_square: Bloco 20: Introdução - SQL:
-<br>
-:black_small_square: Banco de dados SQL
-<br>
-:black_small_square: Encontrando dados em um banco de dados
-<br>
-:black_small_square: Filtrando dados de forma especí­fica
-<br>
-:black_small_square: Manipulando tabelas
-<br>
-:black_small_square: Projeto - All For One
- <br><br>
-:black_medium_small_square: Bloco 20: Introdução - SQL:
-<br>
-:black_small_square: Banco de dados SQL
-<br>
-:black_small_square: Encontrando dados em um banco de dados
-<br>
-:black_small_square: Filtrando dados de forma especí­fica
-<br>
-:black_small_square: Manipulando tabelas
-<br>
-:black_small_square: Projeto - All For One
-<br><br>
-:black_medium_small_square: Bloco 21: Funções SQL, Joins e Subqueries
-<br>
-:black_small_square: Funções mais usadas no SQL
-<br>
-:black_small_square: Descomplicando JOINs, UNIONs e Subqueries
-<br>
-:black_small_square: Stored Routines & Stored Functions
-<br>
-:black_small_square: Projeto - Vocabulary Booster
- <br><br>
-:black_medium_small_square: Bloco 22: Normalização e Modelagem de Banco de Dados:
-<br>
-:black_small_square: Transformando ideias em um modelo de banco de dados - Parte 1
-<br>
-:black_small_square: Normalização, Formas Normais e Dumps
-<br>
-:black_small_square: Transformando ideias em um modelo de banco de dados - Parte 2
-<br>
-:black_small_square: Projeto - One For All
-<br><br>
-:black_medium_small_square: Bloco 23: Introdução - MongoDB:
-<br>
-:black_small_square: Introdução NoSQL e MongoDB
-<br>
-:black_small_square: Filter Operators
-<br>
-:black_small_square: Projeto - Data Flights
-<br><br>
-:black_medium_small_square: Bloco 24: MongoDB: Updates simples e complexos:
-<br>
-:black_small_square: Updates Simples_
-<br>
-:black_small_square: Updates Complexos - Arrays - Parte 1
-<br>
-:black_small_square: Updates Complexos - Arrays - Parte 2
-<br>
-:black_small_square: Projeto - Commerce 
-<br><br>
-:black_medium_small_square: Bloco 25: MongoDB: Aggregation Framework:
-<br>
-:black_small_square: Aggregation Framework - Part 1
-<br>
-:black_small_square: Aggregation Framework - Part 2
-<br>
-:black_small_square: Projeto - Aggregations
-<br><br>
-:black_medium_small_square: Bloco 26: Introdução - NodeJS:
-<br>
-:black_small_square: NodeJS - Introdução
-<br>
-:black_small_square: NodeJS - Fluxo Assí­ncrono
-<br>
-:black_small_square: Testes com NodeJS
-<br>
-:black_small_square: Express: HTTP com Node.js
-<br>
-:black_small_square: Praticando Express
-<br>
-:black_small_square: Projeto - Talker Manager
-<br><br>
-:black_medium_small_square: Bloco 27: NodeJS: Camada de Serviço e Arquitetura Rest e Restful:
-<br>
-:black_small_square: Introdução e Camada de Model: Arquitetura de Software
-<br>
-:black_small_square: Arquitetura de Software - Camada de Controller e Service
-<br>
-:black_small_square: Arquitetura Web - Rest e Restful
-<br>
-:black_small_square: Arquitetura de Software - Testando as Camadas
-<br>
-:black_small_square: Projeto - Store Manager
-<br><br>
-:black_medium_small_square: Bloco 28: Autenticação e Upload de Arquivos:
-<br>
-:black_small_square: NodeJS - JWT - (JSON Web Token)
-<br>
-:black_small_square: NodeJS - Updolad de arquivos com "multer"
-<br>
-:black_small_square: Testando APIs com Teste de Integração
-<br>
-:black_small_square: Projeto - Cookmaster
-<br><br>
-:black_medium_small_square: Bloco 29: Depoloyment:
-<br>
-:black_small_square: Introdução - Deploy
-<br>
-:black_small_square: Infraestrutura - Deploy com Heroku
-<br>
-:black_small_square: Gerenciadores de Processos
-<br>
-:black_small_square: Projeto - Stranger Things
-<br><br>
-:black_medium_small_square: Bloco 30: Arquitetura: SOLID e ORM:
-<br>
-:black_small_square: Arquitetura - Princípios SOLID_
-<br>
-:black_small_square: ORM - Interface da aplicação com o banco de dados
-<br>
-:black_small_square: ORM - Associations
-<br>
-:black_small_square: Projeto - API de Blogs
-<br><br>
-:black_medium_small_square: Bloco 31: Sockets:
-<br>
-:black_small_square: Arquitetura de Software - Camada de View
-<br>
-:black_small_square: Sockets - TCP/UDP & NET
-<br>
-:black_small_square: Sockets - Socket.io
-<br>
-:black_small_square: Sockets - Praticando Socket.io
-<br>
-:black_small_square: Projeto - Webchat
-<br><br>
-:black_medium_small_square: Bloco 32: Projeto
-<br>
-:black_small_square: Projeto - Trybeer V 
-</details> 
+<strike>Projeto One For All</strike>
+ 
+ ### Bloco 22 - Introdução ao Desenvolvimento Web com NodeJS: 
+ - [x] NodeJs
+ - [x] Fluxo Assíncrono
+ - [x] Mocha, Chai e Sinon - Testes com NodeJs
+ - [x] Express - HTTP com Nodejs
+ - [x] Express - Middlewares
+ 
+ <strike>Projeto Talker Manager</strike>
+ 
+ ### Bloco 23 - Nodejs - Camada de Serviço e Arquitetura Rest e RestFull: 
+ - [x] Arquitetura - Camada Model
+ - [x] Arquitetura - Camada Controller e Services
+ - [x] Arquitetura Web - Rest e RestFull
+ - [x] Arquitetura de Software - Testando as camadas
+
+ <strike>Projeto Store Manager</strike>
+ 
+ ### Bloco 24 - Nodejs - ORM e Autenticação: 
+ - [x] ORM - Interface da aplicação com o Banco de Dados
+ - [x] ORM - Associations
+ - [x] JWT - Json Web Token
+ - [x] Testando Apis com Teste de Integração
+
+<strike>Projeto APIS de Blogs</strike>
+ 
+  ### Bloco 25 - Deployment: 
+ - [x] Infraestrutura - Deploy com Heroku
+ - [x] Deploy Docker & Heroku
+
+<strike>Projeto Stranger Things</strike>
+
+  ### Bloco 26 - Typescript: 
+ - [x] Introdução ao Typescript
+ - [x] Tipagem Estática e Genérica
+ - [x] Express com Typescript
+
+<strike>Projeto Trybe Smith</strike>
+ 
+  ### Bloco 27 - Programando Orientado a Objetos - POO e SOLID: 
+ - [x] Introdução à Orientação a Objetos
+ - [x] Herança e Interfaces
+ - [x] Polimorfismo
+ - [x] SOLID - Princípios S, O, D
+ - [x] SOLID - Princípios L e I
+
+  <strike>Projeto Trybers and Dragons</strike>
+ 
+   <strike><h3>Bloco 28 - Projeto Trybe Futebol Club</h3></strike>
+ 
+  ### Bloco 29 - Introdução ao MongoDB: 
+ - [ ] MogoDB - NoSQL
+ - [ ] Filter Operators
+ - [ ] Operadores de Consulta
+ - [ ] Updates Simples
+ - [ ] Updates Complexos - Arrays
+
+<strike>Projeto Commerce</strike>
+ 
+  ### Bloco 30 - MongoDB com NodeJs e POO: 
+ - [ ] MogoDB e Arquitetura MSC
+ - [ ] MongoDB e POO
+ - [ ] Operadores de Consulta 
+
+<strike>Projeto Car Shop</strike>
+
+<strike><h3>Bloco 31 - Projeto App Delivery</h3></strike>
+ 
+  ### Bloco 32 - MasterClass - VPS, CI/CD: 
+ - [ ] Dia 1
+ - [ ] Dia 2
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
