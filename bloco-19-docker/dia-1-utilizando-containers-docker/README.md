@@ -6,7 +6,6 @@
 sudo apt-get remove docker* containerd runc
 sudo apt-get update
 sudo apt-get upgrade
-
 ```
 
 2. Habilitando HTTPS para o apt:
@@ -30,7 +29,6 @@ sudo apt-get install \
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
   | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
   ```
   
   
@@ -47,8 +45,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ```
 sudo groupadd docker
-sudo usermod -aG docker $USER`
-
+sudo usermod -aG docker $USER
 ```
 
 3 - Realizando login e logout de sua sessão:
@@ -61,7 +58,6 @@ newgrp docker
 sudo apt-get purge docker-ce docker-ce-cli containerd.io
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
-
 ```
 
 ## Iniciando o Daemon do Docker
@@ -97,7 +93,6 @@ sudo rm -rf /var/lib/containerd
 ```
 docker container run <nome-da-imagem>:<tag>
 docker container run hello-world
-
 ```
 
 - Obs. O container aqui foi criado, iniciado e encerrado, pois não demos nenhuma instrução para ele
@@ -172,7 +167,6 @@ docker container run -ti ubuntu
 ```
 docker container pause <CONTAINER ID || NAMES>
 docker container unpause <CONTAINER ID || NAMES>
-
 ```
 
 4 - Encerrar um container:

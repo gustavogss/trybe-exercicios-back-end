@@ -30,7 +30,6 @@ ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/
-
 ```
 
 ## Encerrar o terminal: 
@@ -48,7 +47,6 @@ BUG_REPORT_URL="https://bugs.debian.org/
 ```
 CONTAINER ID   IMAGE                COMMAND   CREATED         STATUS                          PORTS     NAMES
 b26f86850fed   debian:stable-slim   "bash"    6 minutes ago   Exited (0) About a minute ago             ecstatic_hoover
-
 ```
 
 ## Iniciar o container e retomar
@@ -56,7 +54,6 @@ b26f86850fed   debian:stable-slim   "bash"    6 minutes ago   Exited (0) About a
 ```
 docker start b2
 docker attach b2
-
 ```
 
 ## Verificar versão: 

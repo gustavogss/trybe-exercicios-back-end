@@ -1,29 +1,31 @@
 --------------------- Manipulação e Criação de Imagens no Docker -------------------
 
-1 - Para listar todas as imagens que foram baixadas:
+1. Para listar todas as imagens que foram baixadas:
 
-docker images
+`docker images`
 
-2 - Formato das imagens que foram baixadas:
-
+2. Formato das imagens que foram baixadas:
+   
+```
 REPOSITORY     TAG       IMAGE ID       CREATED        SIZE
 hello-world    latest    bc11b176a293   6 weeks ago    9.14kB
+```
 
-Obs. A partir de uma imagem, podemos ter vários containers
+- Obs. A partir de uma imagem, podemos ter vários containers
 
-3 - Para remover uma imagem:
+3. Para remover uma imagem:
 
-docker rmi -f bc11b176a293
+`docker rmi -f bc11b176a293`
 
-Obs. Ao excluir uma imagen, os containers dela não serão removidos, ficarão orfãos. Se quisermos executa-los novamente, teremos que baixar uma nova imagem para ser a referência deles.
+- Obs. Ao excluir uma imagen, os containers dela não serão removidos, ficarão orfãos. Se quisermos executa-los novamente, teremos que baixar uma nova imagem para ser a referência deles.
 
-4 - Para baixar uma imagem, sem criar nenhum container:
+4. Para baixar uma imagem, sem criar nenhum container:
 
-docker pull <imagem> 
+`docker pull <imagem>` 
 
-Obs. Cada download baixado da imagem representa uma camada ou layer, o Docker usa esse processo para que as camadas sejam reaproveitadas por outras imagens e não precisem ser instaladas em duplicidade. Cada camada possui um hash.
+- Obs. Cada download baixado da imagem representa uma camada ou layer, o Docker usa esse processo para que as camadas sejam reaproveitadas por outras imagens e não precisem ser instaladas em duplicidade. Cada camada possui um hash.
 
-5 - Para persistir alterações no container, mesmo que seja reinicializado:
+5. Para persistir alterações no container, mesmo que seja reinicializado:
 
 docker run --name meu_container -it ubuntu
 #echo "Teste container" > ola_mundo.txt
