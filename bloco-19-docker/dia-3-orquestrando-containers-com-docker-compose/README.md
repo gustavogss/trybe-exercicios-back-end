@@ -17,47 +17,47 @@ docker container run -ti --link container1 --name container2 busybox
 
 `docker network connect minha-rede meu-container`
 
-3. E para desconectá-lo, basta utilizar o parâmetro disconnect :
+4. E para desconectá-lo, basta utilizar o parâmetro disconnect :
 
 `docker network disconnect minha-rede meu-container`
 
-4. Criando nossa rede docker bridge:
+5. Criando nossa rede docker bridge:
      
 ```
 docker network create --driver bridge rede-local
 docker network ls
 ```
 
-5. Criando uma imagem ubuntu modificada para ter um comando ping:
+6. Criando uma imagem ubuntu modificada para ter um comando ping:
 
 `docker container run -itd --name novo_container mjgargani/ubuntu-ping`
 
-6. Adicionar o novo_container na rede-local:
+7. Adicionar o novo_container na rede-local:
 
 `docker network connect rede-local novo_container`
 
-7. Criando container e já diretamente especificando qual rede ele irá usar:
+8. Criando container e já diretamente especificando qual rede ele irá usar:
 
 `docker container run -it --name outro_container --network rede-local mjgargani/ubuntu-ping`
 
-8. Para conectar outro_container ao novo container, basta dentro do outro_container:
+9. Para conectar outro_container ao novo container, basta dentro do outro_container:
 
 `ping novo_container`
 
-9. Volumes: são formas para persistir dados em containers mesmo que sejam removidos(-v)
+10. Volumes: são formas para persistir dados em containers mesmo que sejam removidos(-v)
   
 ```
 docker run -d --name site-trybe2 -p 8881:80 -v "/home/gustavosouza/Workspace/TRYBE/trybe-exercicios/back-end/bloco-19-docker/trybe/meu-site:/usr/local/apache2/htdocs/" httpd:2.4
 ```
 
-10.  Removendo volumes:
+11.  Removendo volumes:
 
 ```
 docker volume rm <VOLUME NAME>
 docker volume prune
 ```
 
-11.  Para detalhes da imagem ou container usamos o inspect:
+12.  Para detalhes da imagem ou container usamos o inspect:
 
 `docker inspect (id da imagem ou container)`
 
@@ -76,7 +76,7 @@ docker volume prune
 
 - "Mounts" mostra através do Source onde está o volume do container em nosso Docker Host.
 
-12. Para especificar os volumes da nossa imagem no nosso Dockerfile:
+13. Para especificar os volumes da nossa imagem no nosso Dockerfile:
 
 `VOLUME ["/data"]`
 
@@ -122,15 +122,15 @@ services:
     
  3. Restart possui 4 valores: 
  
- #### no - Este é o valor padrão assumido pelo Docker e define que o container não irá restartar automaticamente;
+ - no: Este é o valor padrão assumido pelo Docker e define que o container não irá restartar automaticamente;
  
-#### on-failure - Define que o container será reiniciado caso ocorra alguma falha, apontado pelo exit code diferente de zero;
+- on-failure: Define que o container será reiniciado caso ocorra alguma falha, apontado pelo exit code diferente de zero;
 
-#### always - Especifica que sempre que o serviço parar, seja por um falha ou porque ele finalizou sua execução, ele irá ser reiniciado; *
+- always: Especifica que sempre que o serviço parar, seja por um falha ou porque ele finalizou sua execução, ele irá ser reiniciado; *
 
-#### unless-stopped - Define que o container sempre seja reiniciado, a menos que o Docker em si seja parado (manualmente ou não). No caso de ser interrompido, ele não reinicia nem depois que o daemon do Docker * seja reiniciado.   
+- unless-stopped: Define que o container sempre seja reiniciado, a menos que o Docker em si seja parado (manualmente ou não). No caso de ser interrompido, ele não reinicia nem depois que o daemon do Docker * seja reiniciado.   
 
-- O daemon do Docker é um processo contínuo, que roda em segundo plano e que gerencia os containers Docker em um host.
+### O daemon do Docker é um processo contínuo, que roda em segundo plano e que gerencia os containers Docker em um host.
 
 4. No contexto de Docker, secret é um dado que não deve ser transmitido por uma rede ou armazenado sem criptografia em um Dockerfile ou no código fonte de sua aplicação, como uma senha ou uma chave privada SSH, por exemplo.
 
