@@ -20,7 +20,7 @@
  
  `#cat /etc/*-release`
  
-`PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+```PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
 NAME="Debian GNU/Linux"
 VERSION_ID="11"
 VERSION="11 (bullseye)"
@@ -28,7 +28,7 @@ VERSION_CODENAME=bullseye
 ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
-BUG_REPORT_URL="https://bugs.debian.org/`
+BUG_REPORT_URL="https://bugs.debian.org/```
 
 ## Encerrar o terminal: 
 
@@ -42,8 +42,8 @@ BUG_REPORT_URL="https://bugs.debian.org/`
 
 `docker container ls -a`
 
-`CONTAINER ID   IMAGE                COMMAND   CREATED         STATUS                          PORTS     NAMES
-b26f86850fed   debian:stable-slim   "bash"    6 minutes ago   Exited (0) About a minute ago             ecstatic_hoover`
+```CONTAINER ID   IMAGE                COMMAND   CREATED         STATUS                          PORTS     NAMES
+b26f86850fed   debian:stable-slim   "bash"    6 minutes ago   Exited (0) About a minute ago             ecstatic_hoover```
 
 ## Iniciar o container e retomar
 
