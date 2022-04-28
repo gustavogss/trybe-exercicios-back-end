@@ -2,18 +2,23 @@
 
 1. Siga os passos primeiramente removendo todas as versões anteriores, se houver:
 
-`sudo apt-get remove docker* containerd runc
+```
+sudo apt-get remove docker* containerd runc
 sudo apt-get update
-sudo apt-get upgrade`
+sudo apt-get upgrade
+
+```
 
 2. Habilitando HTTPS para o apt:
 
-`sudo apt-get install \
+```
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release`
+    lsb-release    
+```
     
 3. Adicione uma chave de acesso ao repositório remoto:  
 
@@ -21,22 +26,30 @@ sudo apt-get upgrade`
 
 4. Adcionando o repositório oficial com versões estáveis do Docker:
 
-`echo \
+```
+echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
-  | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+  | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+  ```
   
   
  # Instalando Docker Engine 
 
 1. Instalando a última versão estável do Docker Engine - Commmunity:
 
-`sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io`
+```
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
 
 2. Adicione um usuário ao grupo de usuários docker como root:
 
-`sudo groupadd docker
+```
+sudo groupadd docker
 sudo usermod -aG docker $USER`
+
+```
 
 3 - Realizando login e logout de sua sessão:
 
@@ -44,9 +57,12 @@ newgrp docker
 
 4. Para desistalar o Docker Engine por algum motivo:
 
-`sudo apt-get purge docker-ce docker-ce-cli containerd.io
+```
+sudo apt-get purge docker-ce docker-ce-cli containerd.io
 sudo rm -rf /var/lib/docker
-sudo rm -rf /var/lib/containerd`
+sudo rm -rf /var/lib/containerd
+
+```
 
 ## Iniciando o Daemon do Docker
 
@@ -78,8 +94,11 @@ sudo rm -rf /var/lib/containerd`
 
 1. Formato dos comandos Docker: (Se a tag não for passada, ela assumi a última versão latest)
 
-`docker container run <nome-da-imagem>:<tag>
-docker container run hello-world`
+```
+docker container run <nome-da-imagem>:<tag>
+docker container run hello-world
+
+```
 
 - Obs. O container aqui foi criado, iniciado e encerrado, pois não demos nenhuma instrução para ele
 
@@ -102,13 +121,17 @@ docker container run hello-world`
 
 6. Para executar comandos antes que o container seja encerrado e manter ele ativo por mais tempo:
 
-`docker container run <nome-da-imagem>:<tag> <comando> <argumentos-do-comando>
-docker container run ubuntu echo 'Hello Tryber!'`
+```
+docker container run <nome-da-imagem>:<tag> <comando> <argumentos-do-comando>
+docker container run ubuntu echo 'Hello Tryber!'
+```
 
 7. Para ter acesso ao terminal de forma interativa dentro do container: (Criar e entrar no container em modo root)
 
-`docker container run -ti ubuntu
-#cat /etc/lsb-release (Retorna os dados da distribuição da imagem ubuntu)`
+```
+docker container run -ti ubuntu
+#cat /etc/lsb-release (Retorna os dados da distribuição da imagem ubuntu)
+```
 
 8. Para dar nome ao container:
 
@@ -146,8 +169,11 @@ docker container run ubuntu echo 'Hello Tryber!'`
 
 3 - Pausar e Desapusar um container:
 
-`docker container pause <CONTAINER ID || NAMES>
-docker container unpause <CONTAINER ID || NAMES>`
+```
+docker container pause <CONTAINER ID || NAMES>
+docker container unpause <CONTAINER ID || NAMES>
+
+```
 
 4 - Encerrar um container:
 
