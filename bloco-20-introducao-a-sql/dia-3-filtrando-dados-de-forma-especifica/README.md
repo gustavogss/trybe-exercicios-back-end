@@ -2,16 +2,16 @@
 # OPERADORES LÓGICOS
 
 ## OPERADOR - DESCRIÇÃO
-- =   IGUAL
--  >   MAIOR QUE
--  <   MENOR QUE
--  >=  MAIOR QUE OU IGUAL
--  <=  MENOR QUE OU IGUAL
--  <>  DIFERENTE DE
--  AND OPERADOR LÓGICO E
--  OR  OPERADOR LÓGICO OU
--  NOT NEGAÇÃO
--  IS  COMPARA COM VALORES BOOLEANOS (TRUE, FALSE, NULL)
+  =   IGUAL
+  >   MAIOR QUE
+  <   MENOR QUE
+  >=  MAIOR QUE OU IGUAL
+  <=  MENOR QUE OU IGUAL
+  <>  DIFERENTE DE
+  AND OPERADOR LÓGICO E
+  OR  OPERADOR LÓGICO OU
+  NOT NEGAÇÃO
+  IS  COMPARA COM VALORES BOOLEANOS (TRUE, FALSE, NULL)
 
 ## Comparadores lógicos SQL 
 
@@ -181,15 +181,16 @@ WHERE payment_date BETWEEN '2005-05-26 00:00:00' AND '2005-05-27 23:59:59';
 ```
 
 4. Selecionando apenas partes de uma data:
-
-`SELECT DATE(payment_date) FROM sakila.payment; -- YYYY-MM-DD`
-`SELECT YEAR(payment_date) FROM sakila.payment; -- Ano `
-`SELECT MONTH(payment_date) FROM sakila.payment; -- Mês`
-`SELECT DAY(payment_date) FROM sakila.payment; -- Dia `
-`SELECT HOUR(payment_date) FROM sakila.payment; -- Hora `
-`SELECT MINUTE(payment_date) FROM sakila.payment; -- Minuto `
-`SELECT SECOND(payment_date) FROM sakila.payment; -- Segundo`
-
+   
+```
+SELECT DATE(payment_date) FROM sakila.payment; -- YYYY-MM-DD
+SELECT YEAR(payment_date) FROM sakila.payment; -- Ano 
+SELECT MONTH(payment_date) FROM sakila.payment; -- Mês
+SELECT DAY(payment_date) FROM sakila.payment; -- Dia 
+SELECT HOUR(payment_date) FROM sakila.payment; -- Hora 
+SELECT MINUTE(payment_date) FROM sakila.payment; -- Minuto 
+SELECT SECOND(payment_date) FROM sakila.payment; -- Segundo
+```
 
 
 
