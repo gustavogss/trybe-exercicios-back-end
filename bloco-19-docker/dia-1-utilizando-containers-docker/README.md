@@ -1,15 +1,16 @@
 # Instalando o Docker Corretamente :rocket:
 
 1. Siga os passos primeiramente removendo todas as versões anteriores, se houver:
-
+  
 ```
 sudo apt-get remove docker* containerd runc
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-2. Habilitando HTTPS para o apt:
-
+1. Habilitando HTTPS para o apt:
+    - A documentação oficial recomenda que os pacotes sejam instalados pelo apt-get:
+  
 ```
 sudo apt-get install \
     apt-transport-https \
@@ -19,18 +20,17 @@ sudo apt-get install \
     lsb-release    
 ```
     
-3. Adicione uma chave de acesso ao repositório remoto:  
+1. Adicione uma chave de acesso ao repositório remoto:  
 
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`
 
-4. Adcionando o repositório oficial com versões estáveis do Docker:
+4. Adicionando o repositório oficial com versões estáveis do Docker:
 
 ```
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
   | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
-  
   
  # Instalando Docker Engine 
 
@@ -40,14 +40,12 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
-
 2. Adicione um usuário ao grupo de usuários docker como root:
 
 ```
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
-
 3 - Realizando login e logout de sua sessão:
 
 newgrp docker
@@ -200,4 +198,8 @@ docker container unpause <CONTAINER ID || NAMES>
 11. Excluir todos os containers ativos:
 
 `docker rm $(docker ps -aq)`
+
+12. Para limpar o docker:
+ `docker system prune -a`
+
 
