@@ -127,79 +127,76 @@ docker container run -ti ubuntu
 ```
 
 8. Para dar nome ao container:
-
 `docker container run --name <nome-da-sua-escolha> <imagem>:<tag>`
 
 9. Para o criar o container e ser removido no final, utilizamos o modo clean-up (-rm):
-
 `docker container run --rm <imagem>:<tag>`
 
 10. Para rodar o container em modo background, assíncrono, em segundo plano:
-
 `docker container run -d <imagem>:<tag>`
 
 11. Para manterá o container ativo em segundo plano, já com um terminal disponível para acesso:
-
 `docker container run -dit ubuntu`
 
 12. Para criar um container sem executá-lo:
-
 `docker container create <parâmetros> <imagem>:<tag>`
 
 13. Para criar um container sem executá-lo de forma interativa com terminal de acesso root:
-
 `docker container create -it <imagem>:<tag>`
 
 ### Iniciar, reiniciar, pausar, resumir e parar um container
 
 1. Para iniciar um container que já foi criado e estava inativo:
-
 `docker container start <CONTAINER ID || NAMES>`
 
 2 - Para reiniciar o container:
-
 `docker container restart <CONTAINER ID || NAMES>`
 
 3 - Pausar e Desapusar um container:
-
 ```
 docker container pause <CONTAINER ID || NAMES>
 docker container unpause <CONTAINER ID || NAMES>
 ```
 
 4 - Encerrar um container:
-
 `docker container stop <CONTAINER ID || NAMES>`
 
 5 - Para retomar o acesso a um container interativo rodando em segundo plano, ou seja, caso tenha iniciado um container em segundo plano utilizando -di:
-
 `docker container attach <CONTAINER ID || NAMES>`
 
 6. Para excluir containers especificos inativos:
-
 `docker container rm <CONTAINER ID || NAMES>`
 
 7. Para excluir containers especificos ativos:
-
 `docker container rm -f <CONTAINER ID || NAMES>`
 
 8. Para excluir todos os containers inativos:
-
 `docker container prune`
 
 9. Para monitorando os processos dentro de um container:
-
 `docker container top <CONTAINER ID || NAMES>`
 
 10. Parar todos os containers ativos:
-
 `docker stop $(docker ps -aq)`
 
 11. Excluir todos os containers ativos:
-
 `docker rm $(docker ps -aq)`
 
 12. Para limpar o docker:
  `docker system prune -a`
 
+13. Para logs no docker:
+`docker logs <hash_ou_nome>`
 
+14. Para monitorar os logs no docker:
+`docker logs -f <hash_ou_nome>`
+
+15. No Docker, é possível executar comandos de terminal no contêiner antes que ele seja encerrado, principalmente se quisermos mantê-lo ativo por mais tempo:
+`docker container run <nome-da-imagem>:<tag> <comando> <argumentos-do-comando>` 
+
+16. Se quisermos utilizar um terminal dentro do contêiner? É só passar o parâmetro -ti⁸ ao comando run que dá acesso a esse terminal:
+`docker container run -ti ubuntu` 
+- -t indica pro Docker que estamos requisitando um terminal no contêiner que consiga imprimir o retorno dos nossos comandos;
+- -i estabelece uma interface de comunicação física com esse terminal.
+
+Dessa forma é possível ter acesso ao terminal de forma interativa dentro do contêiner. Esse terminal já vem por padrão em modo root (#):
