@@ -199,4 +199,6 @@ docker container unpause <CONTAINER ID || NAMES>
 - -t indica pro Docker que estamos requisitando um terminal no contêiner que consiga imprimir o retorno dos nossos comandos;
 - -i estabelece uma interface de comunicação física com esse terminal.
 
-Dessa forma é possível ter acesso ao terminal de forma interativa dentro do contêiner. Esse terminal já vem por padrão em modo root (#):
+Dessa forma é possível ter acesso ao terminal de forma interativa dentro do contêiner. 
+
+## Principais comandos do CLI:
