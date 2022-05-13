@@ -1,4 +1,4 @@
-## Manipulação e Criação de Imagens no Docker :desktop_computer:
+## Manipulação e Criação de Imagens no Docker :computer:
 
 1. Para listar todas as imagens que foram baixadas:
 
@@ -24,17 +24,18 @@ hello-world    latest    bc11b176a293   6 weeks ago    9.14kB
 
 `docker pull <imagem>` 
 
-- Cada download baixado da imagem representa uma camada ou layer, o Docker usa esse processo para que as camadas sejam reaproveitadas por outras imagens e não precisem ser instaladas em duplicidade. 
+- Cada download baixado da imagem representa uma camada ou layer, o Docker usa esse processo para que as camadas sejam reaproveitadas por outras imagens e não precisem ser instaladas em duplicidade.   
 - Cada camada possui um hash.
 
-5. Para persistir alterações no container, mesmo que seja reinicializado:   
+5. A distribuição Linux Alpine é muito utilizada em imagens do Docker por ser uma distribuição leve e que possui somente o essencial para seu funcionamento. Por isso muitos softwares utilizam a tag alpine. Como é o caso da imagem node:alpine.
+
+6. Para persistir alterações no container, mesmo que seja reinicializado:   
 ```
 docker run --name meu_container -it ubuntu
 #echo "Teste container" > ola_mundo.txt
 cat ola_mundo.txt
 exit
 ```
-
 ```
 docker start -ai meu_container
 cat ola_mundo.txt
