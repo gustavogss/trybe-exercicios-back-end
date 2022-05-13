@@ -42,7 +42,7 @@ cat ola_mundo.txt
 exit
 ```
 
-## Mapeamento de Portas 
+## Mapeamento de Portas :door:
 
 1. Baixando a imagem do servidor http: (O -P serve para que o Docker faça um mapeamento de portas automático para acesso ao container. Portas aleatórias)
 
@@ -63,18 +63,25 @@ f9f61da552b9   httpd:2.4   "httpd-foreground"   4 minutes ago   Up 4 minutes   0
 
 `docker stop site-trybe`
 
-4. Colocando o container ativo novamente:
+4. Para interromper a execução do site-trybe imediatamente:
+
+`docker stop -t=0 site-trybe`
+
+5. Colocando o container ativo novamente:
 
 `docker start site-trybe`
 
-5. Para linkar uma porta interna com uma porta do computador(Bindar portas):
+6. Para linkar uma porta interna com uma porta do computador(Bindar portas):
 
 ```
 docker run -d -p <PORTA-SO-HOSPEDEIRO>:<PORTA-SO-CONVIDADO>
 docker run -d -p 54321:80 httpd:2.4
 ```
 
-- Obs. Aqui a porta 54321 é do nosso computador à porta 80 é a do container. Para acessar o site-trybe, http://localhost:54321. O -p serve para especificarmos a porta que queremos para linkar o container a nossa aplicação .
+- Aqui a porta 54321 é do nosso computador à porta 80 é a do container. Para acessar o site-trybe, http://localhost:54321. 
+- O -p serve para especificarmos a porta que queremos para linkar o container a nossa aplicação.
+- Já o -P cria uma porta aleatória
+- O -d roda em modo background, para que o terminal não trave
 
 ## Dockerfile - Comandos básicos 
 
