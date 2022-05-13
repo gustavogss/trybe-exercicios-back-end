@@ -8,7 +8,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-1. Habilitando HTTPS para o apt:
+2. Habilitando HTTPS para o apt:
     - A documentação oficial recomenda que os pacotes sejam instalados pelo apt-get:
   
 ```
@@ -20,7 +20,7 @@ sudo apt-get install \
     lsb-release    
 ```
     
-1. Adicione uma chave de acesso ao repositório remoto:  
+3. Adicione uma chave de acesso ao repositório remoto:  
 
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`
 
@@ -46,7 +46,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
-3 - Realizando login e logout de sua sessão:
+3. Realizando login e logout de sua sessão:
 
 newgrp docker
 
@@ -113,7 +113,7 @@ docker container run hello-world
 8080:3000`
 
 6. Para executar comandos antes que o container seja encerrado e manter ele ativo por mais tempo:
-
+   
 ```
 docker container run <nome-da-imagem>:<tag> <comando> <argumentos-do-comando>
 docker container run ubuntu echo 'Hello Tryber!'
@@ -149,18 +149,18 @@ docker container run -ti ubuntu
 1. Para iniciar um container que já foi criado e estava inativo:
 `docker container start <CONTAINER ID || NAMES>`
 
-2 - Para reiniciar o container:
+2. Para reiniciar o container:
 `docker container restart <CONTAINER ID || NAMES>`
 
-3 - Pausar e Desapusar um container:
+3. Pausar e Desapusar um container:
 ```
 docker container pause <CONTAINER ID || NAMES>
 docker container unpause <CONTAINER ID || NAMES>
 ```
-4 - Encerrar um container:
+4. Encerrar um container:
 `docker container stop <CONTAINER ID || NAMES>`
 
-5 - Para retomar o acesso a um container interativo rodando em segundo plano, ou seja, caso tenha iniciado um container em segundo plano utilizando -dit:
+5. Para retomar o acesso a um container interativo rodando em segundo plano, ou seja, caso tenha iniciado um container em segundo plano utilizando -dit:
 `docker container attach <CONTAINER ID || NAMES>`
 
 6. Para excluir containers especificos inativos:
