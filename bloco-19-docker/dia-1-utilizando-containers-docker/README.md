@@ -157,11 +157,10 @@ docker container run -ti ubuntu
 docker container pause <CONTAINER ID || NAMES>
 docker container unpause <CONTAINER ID || NAMES>
 ```
-
 4 - Encerrar um container:
 `docker container stop <CONTAINER ID || NAMES>`
 
-5 - Para retomar o acesso a um container interativo rodando em segundo plano, ou seja, caso tenha iniciado um container em segundo plano utilizando -di:
+5 - Para retomar o acesso a um container interativo rodando em segundo plano, ou seja, caso tenha iniciado um container em segundo plano utilizando -dit:
 `docker container attach <CONTAINER ID || NAMES>`
 
 6. Para excluir containers especificos inativos:
@@ -173,7 +172,7 @@ docker container unpause <CONTAINER ID || NAMES>
 8. Para excluir todos os containers inativos:
 `docker container prune`
 
-9. Para monitorando os processos dentro de um container:
+9. Para monitorar os processos dentro de um container:
 `docker container top <CONTAINER ID || NAMES>`
 
 10. Parar todos os containers ativos:
@@ -201,4 +200,10 @@ docker container unpause <CONTAINER ID || NAMES>
 
 Dessa forma é possível ter acesso ao terminal de forma interativa dentro do contêiner. 
 
-## Principais comandos do CLI:
+O start apenas inicia o contêiner que já havia sido criado (mas estava inativo), enquanto o run cria e executa um novo container!
+
+17. O comando top traz as informações sobre os processos que estão sendo rodados dentro contêiner. 
+`docker container top <CONTAINER ID || NAMES>`
+
+18. Para estressar o container e mostrar a lista de processos temos:
+`docker run -dit ubuntu dd if=/dev/zero of=/dev/null `
