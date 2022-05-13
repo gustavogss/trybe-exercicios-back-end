@@ -1,4 +1,4 @@
-## Manipulação e Criação de Imagens no Docker 
+## Manipulação e Criação de Imagens no Docker :desktop_computer:
 
 1. Para listar todas as imagens que foram baixadas:
 
@@ -11,22 +11,23 @@ REPOSITORY     TAG       IMAGE ID       CREATED        SIZE
 hello-world    latest    bc11b176a293   6 weeks ago    9.14kB
 ```
 
-- Obs. A partir de uma imagem, podemos ter vários containers
+- A partir de uma imagem, podemos ter vários containers.
 
 3. Para remover uma imagem:
 
 `docker rmi -f bc11b176a293`
 
-- Obs. Ao excluir uma imagen, os containers dela não serão removidos, ficarão orfãos. Se quisermos executa-los novamente, teremos que baixar uma nova imagem para ser a referência deles.
+- Ao excluir uma imagen, os containers dela não serão removidos, ficarão orfãos. 
+- Se quisermos executaálos novamente, teremos que baixar uma nova imagem para ser a referência deles.
 
 4. Para baixar uma imagem, sem criar nenhum container:
 
 `docker pull <imagem>` 
 
-- Obs. Cada download baixado da imagem representa uma camada ou layer, o Docker usa esse processo para que as camadas sejam reaproveitadas por outras imagens e não precisem ser instaladas em duplicidade. Cada camada possui um hash.
+- Cada download baixado da imagem representa uma camada ou layer, o Docker usa esse processo para que as camadas sejam reaproveitadas por outras imagens e não precisem ser instaladas em duplicidade. 
+- Cada camada possui um hash.
 
-5. Para persistir alterações no container, mesmo que seja reinicializado:
-   
+5. Para persistir alterações no container, mesmo que seja reinicializado:   
 ```
 docker run --name meu_container -it ubuntu
 #echo "Teste container" > ola_mundo.txt
@@ -41,7 +42,6 @@ exit
 ```
 
 ## Mapeamento de Portas 
-
 
 1. Baixando a imagem do servidor http: (O -P serve para que o Docker faça um mapeamento de portas automático para acesso ao container. Portas aleatórias)
 
@@ -74,7 +74,6 @@ docker run -d -p 54321:80 httpd:2.4
 ```
 
 - Obs. Aqui a porta 54321 é do nosso computador à porta 80 é a do container. Para acessar o site-trybe, http://localhost:54321. O -p serve para especificarmos a porta que queremos para linkar o container a nossa aplicação .
-
 
 ## Dockerfile - Comandos básicos 
 
