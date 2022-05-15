@@ -89,64 +89,65 @@ FROM sakila.customer
 LIMIT 10;
 ```
 ## FUNÇÕES MATEMÁTICAS 
-
-`SELECT 5 + 5;`
-`SELECT 5 - 5;`
-`SELECT 5 * 5;`
-`SELECT 5 / 5;`
-
-`SELECT rental_duration + rental_rate FROM sakila.film LIMIT 10;`
-`SELECT rental_duration - rental_rate FROM sakila.film LIMIT 10;`
-`SELECT rental_duration / rental_rate FROM sakila.film LIMIT 10;`
-`SELECT rental_duration * rental_rate FROM sakila.film LIMIT 10;`
-
+```
+SELECT 5 + 5;
+SELECT 5 - 5;
+SELECT 5 * 5;
+SELECT 5 / 5;
+```
+```
+SELECT rental_duration + rental_rate FROM sakila.film LIMIT 10;
+SELECT rental_duration - rental_rate FROM sakila.film LIMIT 10;
+SELECT rental_duration / rental_rate FROM sakila.film LIMIT 10;
+SELECT rental_duration * rental_rate FROM sakila.film LIMIT 10;
+```
 1. DIV  - retorna o resultado inteiro de uma divisão, ignorando as casas decimais
 de um número, mostra o valor inteiro:
-
-`SELECT 10 DIV 3;` -- 3
-`SELECT 10 DIV 2;` -- 5
-`SELECT 14 DIV 3;` -- 4
-`SELECT 13 DIV 2;` -- 6
-
+```
+SELECT 10 DIV 3; -- 3
+SELECT 10 DIV 2; -- 5
+SELECT 14 DIV 3; -- 4
+SELECT 13 DIV 2; -- 6
+```
 2. MOD - retorna o resto de uma divisão como resultado:
-
-`SELECT 10 MOD 3;` -- 1
-`SELECT 10 MOD 2;` -- 0
-`SELECT 14 MOD 3;` -- 2
-`SELECT 13 MOD 2;` -- 1
-`SELECT 10.5 MOD 2;` -- 0.5, ou seja, 2 + 2 + 2 + 2 + 2 = 10, restando 0.5
-
+```
+SELECT 10 MOD 3; -- 1
+SELECT 10 MOD 2; -- 0
+SELECT 14 MOD 3; -- 2
+SELECT 13 MOD 2; -- 1
+SELECT 10.5 MOD 2; -- 0.5, ou seja, 2 + 2 + 2 + 2 + 2 = 10, restando 0.5
+```
 3. ROUND - arredonda um valor para cima se for maior que 0.5, e para baixo se for menor que 0.5:
-
-`SELECT ROUND(10.4925);` -- 10
-`SELECT ROUND(10.5136); `-- 11
-`SELECT ROUND(-10.5136);` -- -11
-`SELECT ROUND(10.4925, 2);` -- 10.49 (pega duas casas depois da vírgula)
-`SELECT ROUND(10.4925, 3);` -- 10.493 (pega três casas depois da vírgula)
-
+```
+SELECT ROUND(10.4925); -- 10
+SELECT ROUND(10.5136); -- 11
+SELECT ROUND(-10.5136); -- -11
+SELECT ROUND(10.4925, 2); -- 10.49 (pega duas casas depois da vírgula)
+SELECT ROUND(10.4925, 3); -- 10.493 (pega três casas depois da vírgula)
+```
 4. CELL - sempre arredonda valores para cima:
-
-`SELECT CEIL(10.51);` -- 11
-`SELECT CEIL(10.49);` -- 11
-`SELECT CEIL(10.2);` -- 11
-
+```
+SELECT CEIL(10.51); -- 11
+SELECT CEIL(10.49); -- 11
+SELECT CEIL(10.2); -- 11
+```
 5. FLOOR - sempre arredonda valores para baixo:
-
-`SELECT FLOOR(10.51);` -- 10
-`SELECT FLOOR(10.49);`-- 10
-`SELECT FLOOR(10.2);` -- 10
-
+```
+SELECT FLOOR(10.51); -- 10
+SELECT FLOOR(10.49);-- 10
+SELECT FLOOR(10.2); -- 10
+```
 6. POW - serve para potenciação:
-
-`SELECT POW(2, 2);` -- 4
-`SELECT POW(2, 4);` -- 16
-
+```
+SELECT POW(2, 2); -- 4
+SELECT POW(2, 4); -- 16
+```
 7. SQRT - serve para calcular a raiz quadrada de um número:
-
-`SELECT SQRT(9);` -- 3
-`SELECT SQRT(16);` -- 4
-
-8.  RAND - para gerar valores aleatórios:
+```
+SELECT SQRT(9); -- 3
+SELECT SQRT(16); -- 4
+```
+1.  RAND - para gerar valores aleatórios:
 
 - Para gerar um valor aleatório entre 0 e 1: 0 zero fica incluso, e 1 não.
 `SELECT RAND();`
@@ -198,13 +199,13 @@ diferença:
 ## FUNÇÕES DE AGREGAÇÃO
 
 - AVG , MIN , MAX , SUM e COUNT:
-
-`SELECT AVG(replacement_cost) FROM sakila.film;` 19.984000 (Média entre todos registros)
-`SELECT MIN(replacement_cost) FROM sakila.film;` 9.99 (Menor valor encontrado da coluna)
-`SELECT MAX(replacement_cost) FROM sakila.film;` 29.99 (Maior valor encontrado)
-`SELECT SUM(replacement_cost) FROM sakila.film;`  19984.00 (Soma de todos registros)
-`SELECT COUNT(replacement_cost) FROM sakila.film;`  1000 registros encontrados (Quantidade)
-
+```
+SELECT AVG(replacement_cost) FROM sakila.film; 19.984000 (Média entre todos registros)
+SELECT MIN(replacement_cost) FROM sakila.film; 9.99 (Menor valor encontrado da coluna)
+SELECT MAX(replacement_cost) FROM sakila.film; 29.99 (Maior valor encontrado)
+SELECT SUM(replacement_cost) FROM sakila.film;  19984.00 (Soma de todos registros)
+SELECT COUNT(replacement_cost) FROM sakila.film;  1000 registros encontrados (Quantidade)
+```
 ## FILTRANDO E AGRUPANDO 
 
 1. GROUP BY - serve para agrupar colunas:
