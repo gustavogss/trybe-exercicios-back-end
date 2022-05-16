@@ -17,7 +17,7 @@
 
 - Host: Ao associarmos um contêiner a essa rede, ela passa a compartilhar toda stack de rede do host, ou seja, da máquina que roda o ambiente Docker, por isso deve ser evitada. Deve ser usada apenas para serviços específicos de infra;
 
-- None:  é uma rede que não possui nenhum driver associado, o container associado a ela ficará isolado.
+- None:  é uma rede que não possui nenhum driver associado, aqui o container ficará isolado.
 
 2. Contactando containers 
 
