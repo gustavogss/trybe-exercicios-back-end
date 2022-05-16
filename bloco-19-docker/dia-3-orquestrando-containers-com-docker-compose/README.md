@@ -1,6 +1,6 @@
 ## Introdução
 
-1. O Docker Compose é uma solução para organizar o funcionamento e a configuração de todas essas partes que compõem um sistema.
+1. O Docker Compose é uma solução para organizar o funcionamento e a configuração de todas as partes que compõem um sistema.
 
 - Por meio do arquivo docker-compose.yaml ou docker-compose.yml definimos todas as configurações para executar nosso ambiente de desenvolvimento local, aproveitando as vantagens do Docker, sem nos preocupar em subir cada um dos contêiner que envolve a aplicação.
 
