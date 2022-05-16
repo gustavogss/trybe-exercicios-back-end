@@ -61,7 +61,7 @@ docker network ls
 docker inspect novo_container
 ```
 
-8. Criando container e já diretamente especificando qual rede ele irá usar:
+8. Criando outro container na mesma rede que foi criada:
 
 `docker container run -it --name outro_container --network rede-local mjgargani/ubuntu-ping`
 
