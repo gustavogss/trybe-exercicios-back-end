@@ -55,6 +55,12 @@ docker network ls
 
 `docker network connect rede-local novo_container`
 
+- Para verificar se o container foi realmente adicionado a rede criada use o:
+
+```
+docker inspect novo_container
+```
+
 8. Criando container e já diretamente especificando qual rede ele irá usar:
 
 `docker container run -it --name outro_container --network rede-local mjgargani/ubuntu-ping`
