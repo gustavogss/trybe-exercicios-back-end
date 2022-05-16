@@ -28,6 +28,10 @@ docker container run -ti --link container1 --name container2 busybox
 
 - dentro do container2: dê um ping no container1
 
+```
+ping container1
+```
+
 3. Para conectarmos um container já criado, basta utilizarmos o parâmetro connect :
 
 `docker network connect minha-rede meu-container`
