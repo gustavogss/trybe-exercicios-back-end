@@ -4,7 +4,7 @@
 
 - Por meio do arquivo docker-compose.yaml ou docker-compose.yml definimos todas as configurações para executar nosso ambiente de desenvolvimento local, aproveitando as vantagens do Docker, sem nos preocupar em subir cada um dos contêiner que envolve a aplicação.
 
-- Combinando o Compose com o Netwok e Volumes podemos integrar vários serviços: APIs, front-ends, banco de dados, além de publicar nossos serviços.
+- Combinando o Compose com o Netwok e Volumes podemos integrar vários serviços: APIs, front-ends, banco de dados, além de publicá-los com facilidade.
 
 
 ##  Redes Docker :computer:
