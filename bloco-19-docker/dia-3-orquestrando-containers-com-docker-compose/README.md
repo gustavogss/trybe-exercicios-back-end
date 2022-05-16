@@ -1,3 +1,12 @@
+## Introdução
+
+1. O Docker Compose é uma solução para organizar o funcionamento e a configuração de todas essas partes que compõem um sistema.
+
+- Por meio do arquivo docker-compose.yaml ou docker-compose.yml definimos todas as configurações para executar nosso ambiente de desenvolvimento local, aproveitando as vantagens do Docker, sem nos preocupar em subir cada um dos contêiner que envolve a aplicação.
+
+- Combinando o Compose com o Netwok e Volumes podemos integrar vários serviços: APIs, front-ends, banco de dados, além de publicar nossos serviços.
+
+
 ##  Redes Docker :computer:
 
 1. Verificando redes existentes no docker: 
