@@ -1,4 +1,4 @@
-# Bloco 19 - Docker e Docker Compose
+# Bloco 20 - Introdução ao SQL
 
 ## [Dia 01 - Banco de Dados](dia-1-banco-de-dados-sql/README.md)
 
