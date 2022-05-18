@@ -26,7 +26,7 @@
 
 - DDL – Data Definition Language: são comandos que modificam o banco de dados: DROP – apaga algum objeto e CREATE – permite a criação de novos objetos;
 
-- DCL – Data Control Language: é o grupo responsável pelas permissões, restrições ou bloqueios: GRANT – permite o acesso e/ou modificações no banco de dados;
+- DCL – Data Control Language: é o grupo responsável pelas permissões, restrições ou bloqueios: GRANT – permite o acesso e/ou modificações no banco de dados e REVOKE - retira as permissões;
 
 - DTL – Linguagem de Transição de Dados: é responsável por salvar as alterações feitas pelos usuários: COMMIT – autoriza que as alterações sejam salvas.
 
