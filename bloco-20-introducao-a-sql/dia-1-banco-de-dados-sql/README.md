@@ -56,7 +56,7 @@
 
 3. Os pacotes serão baixados, e ai você vai confirmando com Y e teclando ENTER, até o download terminar.
 
-4 . Para nos certificar de que o serviço do MySQL foi instalado com o seguinte comando:
+4 . Para nos certificar de que o serviço do MySQL foi instalado digite o seguinte comando:
 ```
 service mysql status
 ```
@@ -83,18 +83,16 @@ service mysql start
 ```
 mysql_secure_installation
 ```
-- A primeira configuração que será solicitada é se deseja usar o componente de validação de senhas seguras do MySQL. Basicamente é verificada a força da senha e até mesmo pode exigir senhas mais seguras ao criar qualquer usuário no MySQL.
+- A primeira configuração que será solicitada é se deseja usar o componente de validação de senhas seguras do MySQL. Basicamente é verificada a força da senha e até mesmo pode exigir senhas mais seguras ao criar qualquer usuário no MySQL. Usar ou não é uma decisão sua e não irá afetar a instalação do MySQL que é a proposta desse artigo. Eu escolhi a opção de não usar, com o objetivo de escolher uma senha fácil mais na frente.
 
-- Usar ou não é uma decisão sua e não irá afetar a instalação do MySQL que é a proposta desse post. Eu escolhi a opção de não usar.
-
-4. Próximo passo, ele pedirá para você definir a senha do usuário root do MySQL. Não é a senha do seu o usuário root do Ubuntu. Eu escolhi uma senha fácil de 8 caracteres já que optei por uma segurança baixa.
+4. Próximo passo, ele pedirá para você definir a senha do usuário root do MySQL. Não é a senha do seu o usuário root do Ubuntu. Eu escolhi uma senha fácil de 8 caracteres, 12345678, já que optei por uma segurança baixa.
 
 - Criada e confirmada a senha informe se deseja remover o acesso de usuários anônimos. (Escolhi remover ou Y)
 - Depois ele pergunta se deseja desabilitar o login do usuário root do MySQL remotamente. (Escolhi não N)
-- Agora é questionado se deseja remover o banco de dados test que vem por padrão. (Escolhi remove respondendo Y)
+- Agora é questionado se deseja remover o banco de dados test que vem por padrão. (Escolhi Y)
 - Por fim ele pergunta se deseja remover o banco de dados test que vem por padrão. (Escolhi sim Y)
 
-5. Pronto, Agora podemos tentar efetuar a conexão do nosso usuário root no MySQL 8!. Pare isso uso o comando:
+5. Pronto, Agora podemos tentar efetuar a conexão do nosso usuário root no MySQL 8!. Digite o comando:
 ```
 mysql -u root -p
 ```
@@ -125,7 +123,12 @@ SHOW DATABASES;
 
 1. Antes de tudo, é necessário parar o serviço do MySQL, então abra outro terminal e digite o comando:
 ```
-service mysqld stop ou killall mysqld
+service mysqld stop
+```
+ou
+
+```
+killall mysqld
 ```
 
 2. Após desligar o processo MySQL, inicie o MySQL no modo seguro e ignore as configurações de privilégios com o comando:
@@ -143,7 +146,7 @@ mysql
 use mysql;
 ```
 
-5. Altere a senha do usuário através do terminal (Neste caso conectado com o usuário root):
+5. Altere a senha do usuário através do terminal (Neste caso conectado como usuário root):
 ```
 UPDATE user SET Password=PASSWORD('minhanovasenha') WHERE User='root';
 ```
