@@ -30,7 +30,7 @@
 
 - DTL – Linguagem de Transição de Dados: é responsável por salvar as alterações feitas pelos usuários: COMMIT – autoriza que as alterações sejam salvas.
 
-3. Além disso temos o CREATE, ALTER, WHERE, ORDER BY, GROUP, LIKE, JOIN, INNER JOIN, RIGTH JOIN, LEFT JOIN, e outros.
+3. Além disso temos o ALTER, WHERE, ORDER BY, GROUP, LIKE, JOIN, INNER JOIN, RIGTH JOIN, LEFT JOIN, e outros.
 
 4. No SQL podemos retringir como os dados podem ou não ser manipulados em suas tabelas por meio das constraints que são regras e restrinções, na criação  CREATE, ou na alteração ALTER.
 
