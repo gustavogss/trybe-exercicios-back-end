@@ -19,9 +19,32 @@
 
 ## SQL ( Structured Query Language ):
 
-1. SQL ( Structured Query Language ) é a linguagem mais usada para criar, pesquisar, extrair e também manipular dados dentro de um banco de dados relacional . 
+1. SQL ( Structured Query Language ) é a linguagem mais usada para criar, pesquisar, extrair e também manipular dados dentro de um banco de dados relacional. 
    
-- Para isso existem os comandos como o SELECT , UPDATE , DELETE , INSERT e WHERE.
+2. Seus comandos são subdivididos em 04 grupos:
+- DML – Data Manipulation Language: comandos que alteram informações nas tabelas, seja para inserir ou excluir dados: SELECT, DELETE e INSERT;
+
+- DDL – Data Definition Language: são comandos que modificam o banco de dados: DROP – apaga algum objeto e CREATE – permite a criação de novos objetos;
+
+- DCL – Data Control Language: é o grupo responsável pelas permissões, restrições ou bloqueios: GRANT – permite o acesso e/ou modificações no banco de dados;
+
+- DTL – Linguagem de Transição de Dados: é responsável por salvar as alterações feitas pelos usuários: COMMIT – autoriza que as alterações sejam salvas.
+
+3. Além disso temos o CREATE, ALTER, WHERE, ORDER BY, GROUP, LIKE, JOIN, INNER JOIN, RIGTH JOIN, LEFT JOIN, e outros.
+
+4. No SQL podemos retringir como os dados podem ou não ser manipulados em suas tabelas por meio das constraints que são regras e restrinções, na criação  CREATE, ou na alteração ALTER.
+
+5. As principais constraints utilizadas no SQL são:
+
+- NOT NULL - Garante que aquele campo não pode conter valores nulos, ou seja, se não houver um valor padrão (DEFAULT) definido, será sempre necessário passar um valor para esse campo durante a inserção ou alteração de dados.
+
+- UNIQUE - Garante que o valor inserido na coluna da tabela é único, isto é, não pode haver outro valor igual para esta coluna registrado nesta tabela.
+
+- PRIMARY KEY - Garante que o valor seja a chave primária da tabela, ou seja, que a coluna que possui essa constraint aplicada seja o identificador único da tabela. Ela também é, por definição, não nula (tem o mesmo efeito da constraint NOT NULL) e única (mesmo efeito da constraint UNIQUE).
+
+- FOREIGN KEY - Garante que o valor seja uma chave estrangeira da tabela, ou seja, faça referência à chave primária (valor em uma coluna com a constraint PRIMARY KEY) de outra tabela, permitindo um relacionamento entre tabelas.
+
+- DEFAULT - Garante que, caso nenhum valor seja inserido na coluna (ou caso a pessoa usuária insira um valor nulo), a constraint colocará o valor padrão passado para ela.
 
 ## Instalando e Configurando o MySQL 8 no Ubuntu de forma correta:
 
