@@ -337,3 +337,25 @@ volumes:
 - Depois que tudo terminar é só acessar o localhost na porta 8000 para ter acesso ao ambiente do wordpress:
 
 `http://localhost:8000/`
+
+### Docker-compose MySQL
+docker-composer.yaml
+
+```
+version: '3'
+services:
+   db:
+      container_name: meudb
+      image: mysql:5.7
+      ports:
+         - 3006:3006
+         - 33060:33060
+      enviroment:
+         - MYSQL_ROOT_PASSWORD=senha1234
+         - MYSQL_USER=username
+         - MYSQL_PASSWORD=senha1234
+      restart: always
+      volumes:
+         - /users/emoolint/gustavosouza/repo19/DB_Mysql/data:/var/lib/mysql
+         
+```
