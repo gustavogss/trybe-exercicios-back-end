@@ -1,18 +1,16 @@
-version: '3.3'
+version: '3'
+
 services:
-  db:
+  mysqlsrv:
     image: mysql:5.7
-    restart: always
     environment:
-      MYSQL_DATABASE: 'meubanco'      
-      MYSQL_USER: 'root'   
-      MYSQL_PASSWORD: 'password'      
-      MYSQL_ROOT_PASSWORD: 'password'
-    ports:   
-      - '3306:3306'
-    expose:    
-      - '3306'     
+      MYSQL_ROOT_USER: "root"
+      MYSQL_ROOT_PASSWORD: "123455678"
+      MYSQL_DATABASE: "dockerDB"
+    ports:
+      - "3306:3306"
     volumes:
-      - my-db:/var/lib/mysql
-volumes:
-  my-db:
+      - /home/gustavosouza/Workspace/TRYBE/Docker/volumes/mysql:/var/lib/mysql
+    
+
+ 

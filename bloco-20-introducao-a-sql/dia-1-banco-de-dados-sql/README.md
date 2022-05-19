@@ -182,7 +182,12 @@ sudo systemctl status mysql
 ```
 sudo systemctl stop mysql
 ```
-4. Para configurar o docker-composer.yaml do mysql:
+5. Para criar a imagem mysql no docker via terminal, use o comando:
+```
+docker run -p 3306:3306 --name mysql_80 -e MYSQL_ROOT_PASSWORD=password -d mysql:8 mysqld --default-authentication-plugin=mysql_native_password
+```
+
+1. Para criar via docker-composer.yaml, crie o arquivo docker-compose.yaml com as seguintes configurações:
 ```
 version: '3.3'
 services:
