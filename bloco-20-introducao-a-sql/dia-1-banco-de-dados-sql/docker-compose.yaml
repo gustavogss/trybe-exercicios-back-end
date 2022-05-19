@@ -8,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: "123455678"
       MYSQL_DATABASE: "dockerDB"
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - /home/gustavosouza/Workspace/TRYBE/Docker/volumes/mysql:/var/lib/mysql
     
