@@ -3,8 +3,9 @@ version: '3'
 services:
   db:
     image: mysql:5.7
+    container_name: mysql_connection
     environment:    
-      MYSQL_ROOT_PASSWORD: "12345678"      
+      MYSQL_ROOT_PASSWORD: "passwd"      
     ports:
       - "3307:3306"
     volumes:
