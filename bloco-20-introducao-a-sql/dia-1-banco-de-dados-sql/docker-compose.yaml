@@ -8,7 +8,6 @@ services:
       MYSQL_ROOT_PASSWORD: "passwd"      
     ports:
       - "3307:3306"
-    volumes:
-      - ./databases:/var/lib/mysql
+  
 
   

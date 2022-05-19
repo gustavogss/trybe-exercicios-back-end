@@ -193,15 +193,12 @@ version: '3'
 
 services:
   db:
-    image: mysql:5.7
+    image: mysql
     container_name: mysql_connection
     environment:    
       MYSQL_ROOT_PASSWORD: "passwd"      
     ports:
-      - "3307:3306"
-    volumes:
-      - ./databases:/var/lib/mysql
-
+      - "3307:3306"   
 ```
 
 7. Depois execute o comando para buildar seu ambiente mysql no docker: 
