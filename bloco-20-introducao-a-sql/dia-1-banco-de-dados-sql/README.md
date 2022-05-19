@@ -187,7 +187,7 @@ sudo systemctl stop mysql
 docker run -p 3306:3306 --name mysql_80 -e MYSQL_ROOT_PASSWORD=password -d mysql:8 mysqld --default-authentication-plugin=mysql_native_password
 ```
 
-1. Para criar via docker-composer.yaml, crie o arquivo docker-compose.yaml com as seguintes configurações:
+6. Para criar via docker-composer.yaml, crie o arquivo docker-compose.yaml com as seguintes configurações:
 ```
 version: '3.3'
 services:
@@ -209,14 +209,14 @@ volumes:
   my-db:
 ```
 
-5. Depois execute o comando para buildar seu ambiente mysql no docker: 
+7. Depois execute o comando para buildar seu ambiente mysql no docker: 
 ```
 docker-compose up -d
 ```
 
-6. Depois de baixado sua imagem do mysql para o docker, basta abrir o Workbanch.
+8. Depois de baixado sua imagem do mysql para o docker, basta abrir o Workbanch.
 
-7. Abrir uma nova conexão, colocar um nome, e o usuário e senha que você definiu na sua imagem mysql no docker-compose.yaml
+9. Abrir uma nova conexão, colocar um nome, e o usuário e senha que você definiu na sua imagem mysql no docker-compose.yaml
 
 
 
