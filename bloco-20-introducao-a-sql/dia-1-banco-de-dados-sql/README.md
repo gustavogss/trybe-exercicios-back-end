@@ -172,14 +172,17 @@ service mysqld restart
 
 ### MySQL com Docker
 
-1. Primeiro é necessário para o servico mysql local da sua máquina ou mudar a porta do container mysql da sua máquina.
-
-2. Para para o serviço do seu mysql local, use o comando:
+1. Primeiro verifique o status do seu mysql local, se está ativo:
 ```
-sudo service mysqld stop
+sudo systemctl status mysql
 ```
-3. Para configurar o docker-composer.yaml do mysql:
+2. Caso esteja é necessário parar o servico do seu mysql local da sua máquina ou mudar a porta do container mysql da sua máquina.
 
+3. Para para o serviço do seu mysql local, use o comando:
+```
+sudo systemctl stop mysql
+```
+4. Para configurar o docker-composer.yaml do mysql:
 ```
 version: '3.3'
 services:
@@ -200,6 +203,15 @@ services:
 volumes:
   my-db:
 ```
+
+5. Depois execute o comando para buildar seu ambiente mysql no docker: 
+```
+docker-compose up -d
+```
+
+6. Depois de baixado sua imagem do mysql para o docker, basta abrir o Workbanch.
+
+7. Abrir uma nova conexão, colocar um nome, e o usuário e senha que você definiu na sua imagem mysql no docker-compose.yaml
 
 
 
