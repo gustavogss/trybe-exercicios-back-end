@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  mysqlsrv:
+  db:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_USER: "root"
@@ -10,7 +10,7 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - /home/gustavosouza/Workspace/TRYBE/Docker/volumes/mysql:/var/lib/mysql
+      - ./databases:/var/lib/mysql
     
 
  
