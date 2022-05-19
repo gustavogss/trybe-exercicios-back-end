@@ -170,3 +170,5 @@ service mysqld restart
 
 [Intalando o MySQL no Linux](https://gustavosouza.dev.br/instalando-configurando-mysql-8-no-ubuntu/)
 
+
+
