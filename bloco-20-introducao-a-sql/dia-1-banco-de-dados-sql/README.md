@@ -170,5 +170,37 @@ service mysqld restart
 
 [Intalando o MySQL no Linux](https://gustavosouza.dev.br/instalando-configurando-mysql-8-no-ubuntu/)
 
+### MySQL com Docker
+
+1. Primeiro é necessário para o servico mysql local da sua máquina ou mudar a porta do container mysql da sua máquina.
+
+2. Para para o serviço do seu mysql local, use o comando:
+```
+sudo service mysqld stop
+```
+3. Para configurar o docker-composer.yaml do mysql:
+
+```
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'meubanco'      
+      MYSQL_USER: 'user'   
+      MYSQL_PASSWORD: 'password'      
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:   
+      - '3306:3306'
+    expose:    
+      - '3306'     
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
+```
+
+
 
 
