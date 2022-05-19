@@ -190,14 +190,11 @@ docker run -p 3307:3306 --name mysql_80 -e MYSQL_ROOT_PASSWORD=password -d mysql
 6. Para criar via docker-composer.yaml, crie o arquivo docker-compose.yaml com as seguintes configurações:
 ```
 version: '3'
-
 services:
   db:
     image: mysql:5.7
-    environment:
-      MYSQL_ROOT_USER: "root"
-      MYSQL_ROOT_PASSWORD: "12345678"
-      MYSQL_DATABASE: "dockerDB"
+    environment:    
+      MYSQL_ROOT_PASSWORD: "12345678"      
     ports:
       - "3307:3306"
     volumes:
