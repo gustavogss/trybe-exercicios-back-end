@@ -62,7 +62,21 @@ INSERT INTO Vendas(fornecimento, quantity, order_date)
     (8, 5, '2019-06-11 12:22:48'),
     (6, 1, '2019-09-07 09:53:58'),
     (7, 3, '2020-01-05 08:39:33'),
-    (9, 5, '2020-05-13 14:05:19');
+    (9, 5, '2020-05-13 14:05:19');    
     
-    
- 1 - 
+     USE PecasFornecedores;
+
+  1.  SELECT name as 'peça' FROM Pecas
+      WHERE name LIKE 'GR%';
+
+  2.  SELECT peca, Fornecedor, Preco FROM Fornecimentos 
+      WHERE Fornecedor LIKE '%N%';
+
+  3.  SELECT peca, Fornecedor, Preco FROM Fornecimentos 
+      WHERE Fornecedor LIKE '%N%';
+
+  4.  SELECT * FROM Fornecedores
+      WHERE name LIKE '%LTDA'
+      ORDER BY name DESC;
+
+  5.     
