@@ -64,4 +64,30 @@ SELECT * FROM pessoas;
 	SELECT first_name, last_name FROM sakila.staff;  
 ```
 
+### UPDATE
+
+1. Permite alterar valores de uma tabela com base em alguma condição:
+
+2. Sintaxe usada com UPDATE:
+
+```
+UPDATE nome_da_tabela
+SET propriedade_a_ser_alterada = 'novo valor para coluna'
+WHERE alguma_condicao; -- importantíssimo aplicar o WHERE para não alterar a tabela inteira!
+```
+- Exemplo:
+
+```
+UPDATE sakila.staff
+SET first_name = 'Rannveig'
+WHERE first_name = 'Ravein';
+```
+3. safe updates mode - É uma configuração que existe no MySQL por padrão que não permite que o UPDATE e o DELETE sejam executados se existir IDs que devam ser modificados. E para evitar essa restrição é necessário desabilitar essa configuração dentro de uma query no seu MySQL Workbench, digitando o comando:
+
+```
+SET SQL_SAFE_UPDATES = 0;
+```
+
+4. Alterando mais de uma coluna ao mesmo tempo:
+
 
