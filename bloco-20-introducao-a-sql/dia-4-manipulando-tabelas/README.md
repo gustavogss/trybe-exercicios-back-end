@@ -35,8 +35,11 @@ INSERT INTO nome_da_tabela (coluna1, coluna2) VALUES
 INSERT IGNORE INTO pessoas (id, name) VALUES
 (4,'Gloria'), -- Sem o IGNORE, essa linha geraria um erro e o INSERT não continuaria.
 (5,'Amanda');
-
+```
 -- Pesquisando agora, você verá que a informação duplicada não foi inserida.
--- Porém os dados corretos foram inseridos com sucesso.
+- Porém os dados corretos foram inseridos com sucesso.
+
+```
 SELECT * FROM pessoas;
 ```
+
