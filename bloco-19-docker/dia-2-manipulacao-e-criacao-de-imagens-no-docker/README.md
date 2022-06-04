@@ -42,7 +42,7 @@ cat ola_mundo.txt
 exit
 ```
 
-## MAPEAMENTO DE PORTAS :door:
+### MAPEAMENTO DE PORTAS :door:
 
 1. Baixando a imagem do servidor http: (O -P serve para que o Docker faça um mapeamento de portas automático para acesso ao container. Portas aleatórias)
 
@@ -83,7 +83,7 @@ docker run -d -p 54321:80 httpd:2.4
 - Já o -P cria uma porta aleatória
 - O -d roda em modo background, para que o terminal não trave
 
-## DOCKERFILE - COMANDOS BÁSICOS 
+### DOCKERFILE - COMANDOS BÁSICOS 
 
 1. Para criarmos uma imagem de um container, podemos partir do arquivo Dockerfile, o qual contém a descrição passo a passo do que se espera acontecer.
 
@@ -260,7 +260,7 @@ CMD [ "Hello World" ]
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 
-## GERANDO UMA IMAGEM A PARTIR DO DOCKERFILE
+### GERANDO UMA IMAGEM A PARTIR DO DOCKERFILE
 
 1. Para consolidar as alterações que foram feitas no Dockerfile de nossa aplicação:
 
@@ -274,7 +274,7 @@ docker image build -t react-dockerized:v1 .
 docker run -dit -p 8000:80 --name reactdockerized react-dockerized:v1
 ```
 
-## DOCKERFILE COMANDOS ADICIONAIS :robot:
+### DOCKERFILE COMANDOS ADICIONAIS :robot:
 
 1. LABEL - Para organizar as imagens, registrar informações de licenças, anotar relacionamentos entre containers e outras informações que façam sentido ao objetivo do container ou da aplicaçãe. As informações são registradas seguindo o parâmetro de "chave e valor", e caso uma chave esteja repetida, a última sobrescreverá as anteriores:
 - 
