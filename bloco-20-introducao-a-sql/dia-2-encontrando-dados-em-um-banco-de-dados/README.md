@@ -1,4 +1,4 @@
-# BANCO DE DADOS SQL - ENCONTRAR DADOS EM UM BD :mag:
+# ENCONTRAR DADOS EM UM BD - MySQL :mag:
 
 - Query - são todos os comandos para manipular o banco de dados. Principais tipos queries:
 
@@ -28,7 +28,7 @@
 - SAVEPOINT: Define pontos para os quais uma transação pode voltar. É uma maneira de voltar para pontos específicos de sua query;
 - TRANSACTION: Comandos que definem onde, como e em que escopo suas transações são executadas.
 
-## COMANDO SELECT
+### COMANDO SELECT
 
 1. SELECT serve para selecionar e gerar valores:
 
