@@ -1,4 +1,4 @@
-# Agora a prática
+# PRÁTICA :rocket:
 
 ### Agora vamos abrir o Workbench e fazer uma análise prática do banco de dados sakila, que já deve estar instalado, caso você tenha feito a instalação do MySql Workbench de forma padrão.
 

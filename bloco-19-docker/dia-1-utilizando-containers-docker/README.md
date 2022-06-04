@@ -1,4 +1,6 @@
-# Instalando o Docker Corretamente :rocket:
+# UTILIZANDO CONTAINERS - DOCKER :rocket:
+
+## INSTALANDO O DOCKER CORRETAMENTE 
 
 1. Siga os passos primeiramente removendo todas as versões anteriores, se houver:
   
@@ -32,7 +34,7 @@ echo \
   | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
   
- # Instalando Docker Engine 
+ ## INSTALANDO O DOCKER ENGINE 
 
 1. Instalando a última versão estável do Docker Engine - Commmunity:
 
@@ -58,7 +60,7 @@ sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 ```
 
-## Iniciando o Daemon do Docker
+## INICIANDO O DAEMON DO DOCKER
 
 1. Consultar status do daemon:
 
@@ -72,7 +74,7 @@ sudo rm -rf /var/lib/containerd
 
 `sudo systemctl enable docker`
 
-## Validando a instalação :runner:
+## VALIDANDO A INSTALAÇÃO :runner:
 
 1. Verificar versão do docker:
 
@@ -84,7 +86,7 @@ sudo rm -rf /var/lib/containerd
 
 - Obs. O docker procura no seu computador essa imagem primeiramente, caso não encontre baixa lá do DockerHub, cria o container e executa.
 
-## Containers 
+## CONTAINERS 
 
 1. Formato dos comandos Docker: (Se a tag não for passada, ela assumi a última versão latest)
 
@@ -144,7 +146,7 @@ docker container run -ti ubuntu
 13. Para criar um container sem executá-lo de forma interativa com terminal de acesso root:
 `docker container create -it <imagem>:<tag>`
 
-### Iniciar, reiniciar, pausar, resumir e parar um container
+### INICIAR, REINICIAR, PAUSAR, RESUMIR E PARAR UM CONTAINER 
 
 1. Para iniciar um container que já foi criado e estava inativo:
 `docker container start <CONTAINER ID || NAMES>`

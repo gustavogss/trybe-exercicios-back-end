@@ -1,5 +1,8 @@
+# EXERCÍCIO BLOCO 21 - DIA 03
+
 1 - CRIANDO UM BD Albuns:
 
+```
 CREATE DATABASE IF NOT EXISTS albuns;
-
+```
 

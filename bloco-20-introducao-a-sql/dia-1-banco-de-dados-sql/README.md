@@ -1,4 +1,4 @@
-# Introdução ao Banco de Dados :robot:
+# INTRODUÇÃO AO BANCO DE DADOS :robot:
 
 1. Dados - são fatos brutos que não tem valor.
 
@@ -117,7 +117,7 @@ SHOW DATABASES;
 
 - O Workbench pode ser instalado por meio desse endereço, https://www.mysql.com/products/workbench/. Ou na própria Central de Software do Ubuntu.
 
-### Poxa!, Esqueci a senha do meu MySQL, e agora?
+### ESQUECI A SENHA DO MySQL, E AGORA?
 
 - Não se preocupe, isso é normal de acontecer, mas tem solução para isso:
 
@@ -170,7 +170,7 @@ service mysqld restart
 
 [Intalando o MySQL no Linux](https://gustavosouza.dev.br/instalando-configurando-mysql-8-no-ubuntu/)
 
-### MySQL com Docker
+## MYSQL COM DOCKER
 
 1. Primeiro verifique o status do seu mysql local, se está ativo:
 ```

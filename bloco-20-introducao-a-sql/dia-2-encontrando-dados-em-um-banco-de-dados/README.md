@@ -1,8 +1,8 @@
-# Banco de Dados SQL - Encontrar dados em um BD
+# BANCO DE DADOS SQL - ENCONTRAR DADOS EM UM BD :mag:
 
 - Query - são todos os comandos para manipular o banco de dados. Principais tipos queries:
 
-  1. DDL: São todos os comandos que lidam com o esquema, a descrição e o modo como os dados devem existir em um banco de dados:
+1. DDL: São todos os comandos que lidam com o esquema, a descrição e o modo como os dados devem existir em um banco de dados:
   
 - CREATE: Para criar bancos de dados, tabelas, índices, views, procedures, functions e triggers;
 - ALTER: Para alterar a estrutura de qualquer objeto;
@@ -28,7 +28,7 @@
 - SAVEPOINT: Define pontos para os quais uma transação pode voltar. É uma maneira de voltar para pontos específicos de sua query;
 - TRANSACTION: Comandos que definem onde, como e em que escopo suas transações são executadas.
 
-### Comando SELECT
+## COMANDO SELECT
 
 1. SELECT serve para selecionar e gerar valores:
 

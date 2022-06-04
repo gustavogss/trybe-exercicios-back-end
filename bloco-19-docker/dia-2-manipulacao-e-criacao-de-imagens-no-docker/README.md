@@ -1,4 +1,4 @@
-## Manipulação e Criação de Imagens no Docker :computer:
+# MANIPULAÇÃO E CRIAÇÃO DE IMAGENS NO DOCKER :computer:
 
 1. Para listar todas as imagens que foram baixadas:
 
@@ -42,7 +42,7 @@ cat ola_mundo.txt
 exit
 ```
 
-## Mapeamento de Portas :door:
+## MAPEAMENTO DE PORTAS :door:
 
 1. Baixando a imagem do servidor http: (O -P serve para que o Docker faça um mapeamento de portas automático para acesso ao container. Portas aleatórias)
 
@@ -83,21 +83,21 @@ docker run -d -p 54321:80 httpd:2.4
 - Já o -P cria uma porta aleatória
 - O -d roda em modo background, para que o terminal não trave
 
-## Dockerfile - Comandos básicos 
+## DOCKERFILE - COMANDOS BÁSICOS 
 
 1. Para criarmos uma imagem de um container, podemos partir do arquivo Dockerfile, o qual contém a descrição passo a passo do que se espera acontecer.
 
-- Obs. O arquivo Dockerfile tem que ser criado dentro da pasta de sua aplicação-> touch Dockerfile
+- O arquivo Dockerfile tem que ser criado dentro da pasta de sua aplicação-> touch Dockerfile
 
 2. Dentro do Dockerfile, para criar uma nova imagem que rodará sob um ubuntu, utilizamos o FROM:
-
-`FROM ubuntu:latest`
-
-- Obs. Não é recomendável usar a tag latest, porque ela é sempre atualizada, geralmente usamos de uma versão específica. A tag slim ou alpine, é muito utilizada por serem mais leves, pois possuem versões minimalisticas do SO.
-
-`FROM node:14-alpine AS build`
-
-- Obs. build serve para fazer o deploy da imagem
+```
+FROM ubuntu:latest
+```
+- Não é recomendável usar a tag latest, porque ela é sempre atualizada, geralmente usamos de uma versão específica. A tag slim ou alpine, é muito utilizada por serem mais leves, pois possuem versões minimalisticas do SO.
+```
+FROM node:14-alpine AS build
+```
+- build serve para fazer o deploy da imagem
 
 3. Para definir um "diretório de trabalho", que será utilizado como base para a execução dos comandos, utilizamos o WORKDIR:
 
@@ -123,8 +123,9 @@ COPY package*.json ./
 ```
 
 6. O RUN serve para prepararmos a imagem para rodar o app. Ele executa a lista de comandos durante a criação da imagem.
-
-`RUN ["<COMANDO>", "<SUBCOMANDO>", "<PARAMETRO-1>", ... , "<PARAMETRO-N>"]`
+```
+RUN ["<COMANDO>", "<SUBCOMANDO>", "<PARAMETRO-1>", ... , "<PARAMETRO-N>"]
+```
 
 ```
 # FROM node:14-alpine AS build
@@ -231,9 +232,9 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 14. O ENTRYPOINT também serve para executarmos containers, diferentemente do CMD, ele não sobrescreve o anterior:
-
-`ENTRYPOINT ["/bin/echo", "Hello World"]`
-
+```
+ENTRYPOINT ["/bin/echo", "Hello World"]
+```
 - Obs. Podemos utilizar o ENTRYPOINT, junto com o CMD. Mas ele mudará o comportamento do CMD, que servira como base para o comando definido pelo entrypoint.
 
 15. O Dockfile de nossa aplicação React ficou assim:
@@ -259,7 +260,7 @@ CMD [ "Hello World" ]
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 
-## Gerando uma imagem a partir do nosso Dockerfile 
+## GERANDO UMA IMAGEM A PARTIR DO DOCKERFILE
 
 1. Para consolidar as alterações que foram feitas no Dockerfile de nossa aplicação:
 
@@ -269,13 +270,13 @@ docker image build -t react-dockerized:v1 .
 ```
 
 2. Para ver a aplicação rodando, podemos rodar o mini-projeto no terminal interativo, definindo qual porta do nosso localhost será atribuida para qual porta do container : 
+```
+docker run -dit -p 8000:80 --name reactdockerized react-dockerized:v1
+```
 
-`docker run -dit -p 8000:80 --name reactdockerized react-dockerized:v1`
+## DOCKERFILE COMANDOS ADICIONAIS :robot:
 
-
-## Dockerfile comandos adicionais :robot:
-
-### LABEL - Para organizar as imagens, registrar informações de licenças, anotar relacionamentos entre containers e outras informações que façam sentido ao objetivo do container ou da aplicaçãe. As informações são registradas seguindo o parâmetro de "chave e valor", e caso uma chave esteja repetida, a última sobrescreverá as anteriores:
+1. LABEL - Para organizar as imagens, registrar informações de licenças, anotar relacionamentos entre containers e outras informações que façam sentido ao objetivo do container ou da aplicaçãe. As informações são registradas seguindo o parâmetro de "chave e valor", e caso uma chave esteja repetida, a última sobrescreverá as anteriores:
 - 
 ```
 LABEL <KEY>=<VALUE>
@@ -283,7 +284,7 @@ LABEL maintener="Gustavo Souza <gustavogss.dev@gmail.com>"
 ```
 
 - Esse valor pode ser resgatado posteriormente através do comando:
-- 
+
 ```
  docker inspect <CONTAINER ID || NAMES> 
  
@@ -292,14 +293,14 @@ LABEL maintener="Gustavo Souza <gustavogss.dev@gmail.com>"
 }
 ```
 
-### ENV - Serve para definir variáveis de ambiente no Dockerfile:
+2. ENV - Serve para definir variáveis de ambiente no Dockerfile:
 
 ```
 ENV <ENV NAME> <ENV VALUE>
 ENV NODE_ENV production
 ```
 
-- Obs. Ao rodar nossos containers, também podemos passar variáveis, basta utilizar a tag --env ou -e :
+- Ao rodar nossos containers, também podemos passar variáveis, basta utilizar a tag --env ou -e :
   
 ```
 docker container run \
@@ -310,7 +311,7 @@ docker container run \
    
 - Essas sobrescreverão as definidas no Dockerfile caso possuam o mesmo nome.
 
-### USER - Serve para definir qual o usuário que irá iniciar o app no container, caso não seja definido o usuário, o Docker utilizará o root como padrão:
+3. USER - Serve para definir qual o usuário que irá iniciar o app no container, caso não seja definido o usuário, o Docker utilizará o root como padrão:
 
 ```
 FROM ubuntu:8
