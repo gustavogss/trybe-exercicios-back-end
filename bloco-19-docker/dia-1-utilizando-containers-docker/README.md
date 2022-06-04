@@ -1,6 +1,6 @@
 # UTILIZANDO CONTAINERS - DOCKER :rocket:
 
-## INSTALANDO O DOCKER CORRETAMENTE 
+### INSTALANDO O DOCKER CORRETAMENTE 
 
 1. Siga os passos primeiramente removendo todas as versões anteriores, se houver:
   
@@ -34,7 +34,7 @@ echo \
   | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
   
- ## INSTALANDO O DOCKER ENGINE 
+ ### INSTALANDO O DOCKER ENGINE 
 
 1. Instalando a última versão estável do Docker Engine - Commmunity:
 
@@ -60,7 +60,7 @@ sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 ```
 
-## INICIANDO O DAEMON DO DOCKER
+### INICIANDO O DAEMON DO DOCKER
 
 1. Consultar status do daemon:
 
@@ -74,7 +74,7 @@ sudo rm -rf /var/lib/containerd
 
 `sudo systemctl enable docker`
 
-## VALIDANDO A INSTALAÇÃO :runner:
+### VALIDANDO A INSTALAÇÃO :runner:
 
 1. Verificar versão do docker:
 
@@ -86,7 +86,7 @@ sudo rm -rf /var/lib/containerd
 
 - Obs. O docker procura no seu computador essa imagem primeiramente, caso não encontre baixa lá do DockerHub, cria o container e executa.
 
-## CONTAINERS 
+### CONTAINERS 
 
 1. Formato dos comandos Docker: (Se a tag não for passada, ela assumi a última versão latest)
 
