@@ -1,6 +1,6 @@
-# TRANSFORMANDO IDEIAS EM BANCO DE DADOS :rocket:
+# TRANSFORMANDO IDEIAS EM BANCO DE DADOS 🥇
 
-## DATABASE DESIGN - COMO MODELAR UM BANCO DE DADOS:
+### DATABASE DESIGN - COMO MODELAR UM BANCO DE DADOS:
 
 1. Identificar as entidades, atributos e relacionamentos com base na descrição do problema: Por exemplo, a entidade álbum possui os atributos título e preço e se relaciona com a entidade artista;
 
@@ -10,7 +10,7 @@
 
 4. Criar e relacionar tabelas tendo o diagrama do passo 2 como base: Após criar seu banco de dados, você pode começar a criar e relacionar as tabelas de acordo com o diagrama.
 
-## DEFINIÇÕES:
+### DEFINIÇÕES:
 
 1. Entidades: São uma representação de algo do mundo real dentro do banco de dados. Elas normalmente englobam toda uma ideia e são armazenadas em formato de tabelas em um banco de dados:
 
@@ -18,7 +18,7 @@
 
 3. Relacionamentos ou Cardinalidade - 1:1, 1:M, M:N
 
-## CRIANDO BANCO DE DADOS:
+### CRIANDO BANCO DE DADOS:
 
 1. Cria um banco de dados com o nome especificado:
 ```
@@ -42,7 +42,7 @@ SHOW DATABASES;
 
 USE nome_do_banco_de_dados;
 
-## NORMALIZAÇÃO:
+### NORMALIZAÇÃO:
 
 1. 1ª Forma Normal:todos os atributos de uma tabela devem ser atômicos, ou seja, a tabela não deve conter grupos repetidos e nem atributos com mais de um valor.
 
