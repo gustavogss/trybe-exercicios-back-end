@@ -1,6 +1,8 @@
 # MANIPULAÇÃO DE STRINGS :robot:
 
-1. Converte o texto da string para CAIXA :
+- O MySQL possui algumas funções de manipulação de texto que facilita coerência, normalização e cadastrado dos dados:
+
+1. Converte o texto da string para CAIXA ALTA :
 `SELECT UCASE('Oi, eu sou uma string');`
 
 2. Converte o texto da string para caixa baixa:
