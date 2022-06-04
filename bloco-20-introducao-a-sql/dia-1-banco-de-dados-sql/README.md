@@ -46,7 +46,7 @@
 
 - DEFAULT - Garante que, caso nenhum valor seja inserido na coluna (ou caso a pessoa usuária insira um valor nulo), a constraint colocará o valor padrão passado para ela.
 
-## Instalando e Configurando o MySQL 8 no Ubuntu de forma correta:
+## INSTALANDO O MYSQL NO UBUNTU:
 
 1. Antes de qualquer instalação é importante atualizar pacotes do seu Ubuntu executando o comando:   
    `sudo apt update`
@@ -67,7 +67,7 @@ service mysql status
 mysql --version
 ```
 
-### Iniciando a configuração do MySQL em nossa máquina Ubuntu:
+### INICIANDO A CONFIGURAÇÃO DI MYSQL NO UBUNTU:
 
 1. Para iniciarmos a configuração precisamos estar como super usuário. Então para isso use o comando:
 ```
