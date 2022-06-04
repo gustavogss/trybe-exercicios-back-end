@@ -1,4 +1,4 @@
-# NODE ASSÍNCRONO
+# NODE ASSÍNCRONO 🚀
 
 1. O javaScript é uma linguagem single-threaded , ou seja, executa apenas uma operação de cada vez.
 
