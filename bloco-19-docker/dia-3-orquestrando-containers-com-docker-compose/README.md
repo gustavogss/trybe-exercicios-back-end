@@ -210,7 +210,7 @@ services:
 `docker-compose logs -f --tail=100 <SERVICE NAME>`
 
 
-### Volumes com docker-compose 
+### VOLUMES COM DOCKER-COMPOSE 
 
 1. Para utilizar volumes no arquivo docker-compose.yaml :
 
