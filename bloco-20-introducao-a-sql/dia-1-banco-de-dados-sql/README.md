@@ -1,4 +1,4 @@
-# INTRODUÇÃO AO BANCO DE DADOS :robot:
+# INTRODUÇÃO AO BANCO DE DADOS :rocket:
 
 1. Dados - são fatos brutos que não tem valor.
 
