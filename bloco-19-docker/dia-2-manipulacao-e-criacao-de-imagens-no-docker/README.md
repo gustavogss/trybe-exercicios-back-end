@@ -1,4 +1,4 @@
-# MANIPULAÇÃO E CRIAÇÃO DE IMAGENS NO DOCKER :computer:
+# MANIPULAÇÃO E CRIAÇÃO DE IMAGENS NO DOCKER :rocket:
 
 1. Para listar todas as imagens que foram baixadas:
 
