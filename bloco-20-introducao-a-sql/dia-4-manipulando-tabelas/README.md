@@ -1,4 +1,4 @@
-# Manipulação de Tabelas 🚀
+# Manipulação de Tabelas :hourglass:
 
 1. INSERT - para inserir dados em uma tabela
 2. UPDATE - para atualizar dados em uma tabela
@@ -6,7 +6,7 @@
 
 - DELETE - apaga dados de uma tabela, enquanto que o DROP apaga toda a tabela.
 
-## Informação importante sobre os tipos de aspas
+### ASPAS SIMPLES E BRACKTICKS:
 
 1. Backticks ou crase ( `` ) : São usadas para identificar nome de tabelas e colunas . São necessárias apenas quando o identificador for uma palavra reservada do MySQL , ou quando o nome da tabela ou coluna contiver espaços em branco.
 
