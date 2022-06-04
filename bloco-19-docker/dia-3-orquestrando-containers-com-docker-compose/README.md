@@ -1,4 +1,4 @@
-## Introdução
+## INTRODUÇÃO :rocket:
 
 1. O Docker Compose é uma solução para organizar o funcionamento e a configuração de todas as partes que compõem um sistema.
 
@@ -7,7 +7,7 @@
 - Combinando o Compose com o Netwok e Volumes podemos integrar vários serviços: APIs, front-ends, banco de dados, além de publicá-los com facilidade.
 
 
-##  Redes Docker :computer:
+##  REDES DOCKER 
 
 1. Verificando redes existentes no docker: 
    
@@ -100,7 +100,7 @@ docker volume prune
 `VOLUME ["/data"]`
 
 
-## Docker Compose :robot:
+## DOCKER COMPOSE :robot:
 
 
 1. Instalação do Docker Compose:
@@ -181,7 +181,7 @@ services:
     
  - Obs. Aqui o database será iniciado antes do backend , que será startado antes do frontend .   
     
-6.  Comando up - Serve executar todos os containers especificados, baixando as imagens do repositório, criando volumes ou buildando localmente a partir do Dockerfile:
+6. Comando up - Serve executar todos os containers especificados, baixando as imagens do repositório, criando volumes ou buildando localmente a partir do Dockerfile:
 
 `docker-compose up`
 
@@ -338,8 +338,9 @@ volumes:
 
 `http://localhost:8000/`
 
-### Docker-compose MySQL
-docker-composer.yaml
+### DOCKER-COMPOSE MySQL
+
+docker-compose.yaml
 
 ```
 version: '3'
