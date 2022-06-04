@@ -44,14 +44,7 @@ USE nome_do_banco_de_dados;
 
 ### NORMALIZAÇÃO:
 
-1. Tabela não normalizada:
-
-| Código | Nome    | Endereço                          | Telefone      |
-|--------|---------|-----------------------------------|---------------|
-| 1001   | Gustavo | Rua Fulano de Tal - Centro        | (83)1111-1111 |
-| 1002   | Souza   | Av. Epitácio Pessoa - Cabo Branco | (83)2222-2222 |
-
-- 1ª Forma Normal:todos os atributos de uma tabela devem ser atômicos, ou seja, a tabela não deve conter grupos repetidos e nem atributos com mais de um valor.
+1ª Forma Normal:todos os atributos de uma tabela devem ser atômicos, ou seja, a tabela não deve conter grupos repetidos e nem atributos com mais de um valor.
 
 - Colunas devem possuir apenas um valor
 - Valores em uma coluna devem ser do mesmo tipo de dados
@@ -60,12 +53,12 @@ USE nome_do_banco_de_dados;
 
 - TELEFONE como é um atributo multivalorado.
 
-- 2ª Forma Normal: primeiro é preciso estar na 1FN. Além disso, todos os atributos não chaves da tabela devem depender unicamente da chave primária (não podendo depender apenas de parte dela). Para deixar na segunda forma normal, é preciso identificar as colunas que não são funcionalmente dependentes da chave primária da tabela e, em seguida, remover essa coluna da tabela principal e criar uma nova tabela com esses dados. 
+2ª Forma Normal: primeiro é preciso estar na 1FN. Além disso, todos os atributos não chaves da tabela devem depender unicamente da chave primária (não podendo depender apenas de parte dela). Para deixar na segunda forma normal, é preciso identificar as colunas que não são funcionalmente dependentes da chave primária da tabela e, em seguida, remover essa coluna da tabela principal e criar uma nova tabela com esses dados. 
  
 - A tabela deve estar na 1ª Forma Normal
 - A tabela não deve possuir dependências parciais.
  
-- 3ª Forma Normal: para estar na 3FN, é preciso estar na 2FN. Além disso, os atributos não chave de uma tabela devem ser mutuamente independentes e dependentes unicamente e exclusivamente da chave primária (um atributo B é funcionalmente dependente de A se, e somente se, para cada valor de A só existe um valor de B). Para atingir essa forma normal, é preciso identificar as colunas que são funcionalmente dependentes das outras colunas não chave e extraí-las para outra tabela. 
+3ª Forma Normal: para estar na 3FN, é preciso estar na 2FN. Além disso, os atributos não chave de uma tabela devem ser mutuamente independentes e dependentes unicamente e exclusivamente da chave primária (um atributo B é funcionalmente dependente de A se, e somente se, para cada valor de A só existe um valor de B). Para atingir essa forma normal, é preciso identificar as colunas que são funcionalmente dependentes das outras colunas não chave e extraí-las para outra tabela. 
 
 - A tabela deve estar na 1ª e 2ª Formas Normais;
 - A tabela não deve conter atributos (colunas) que não sejam dependentes exclusivamente da PK (chave primária).
