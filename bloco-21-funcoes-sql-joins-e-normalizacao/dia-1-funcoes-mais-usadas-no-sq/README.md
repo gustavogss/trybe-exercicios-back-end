@@ -1,4 +1,4 @@
-# MANIPULAÇÃO DE STRINGS :robot:
+# MANIPULAÇÃO DE STRINGS :hourglass:
 
 - O MySQL possui algumas funções de manipulação de texto que facilita coerência, normalização e cadastrado dos dados:
 
@@ -33,7 +33,7 @@
 
 Strings no SQL são indexadas a partir do indice 1 e não do indice 0.
 
-## Condições em SQL 
+### Condições em SQL 
 
 1. Assim como nas linguagens de programação usamos condicionais no SQL usamos da 
 seguinte forma:
@@ -90,7 +90,7 @@ SELECT
 FROM sakila.customer
 LIMIT 10;
 ```
-## FUNÇÕES MATEMÁTICAS 
+### FUNÇÕES MATEMÁTICAS 
 ```
 SELECT 5 + 5;
 SELECT 5 - 5;
@@ -160,7 +160,7 @@ SELECT SQRT(16); -- 4
 - O cálculo que é feito é o seguinte: (7 + (0.0 a 1.0 * 6))
 
 
-## Trabalhando com Datas :calendar:
+### TRABALHANDO COM DATAS :calendar:
 
 1. CURENT_DATE - serve para calcular a data atual:
 
@@ -191,14 +191,14 @@ diferença:
 - -239:00:00, ou seja, há uma diferença de 239 horas entre as datas
 `SELECT TIMEDIFF('2021-08-11 08:30:10', '2021-08-01 09:30:10');`
 
-## Variaveis no SQL 
+### VARIÁVEIS NO SQL 
 
 @variavel - @age 
 
 - Para seta variáveis
 `SET @age = 25`
 
-## FUNÇÕES DE AGREGAÇÃO
+### FUNÇÕES DE AGREGAÇÃO
 
 - AVG , MIN , MAX , SUM e COUNT:
 ```
@@ -208,7 +208,7 @@ SELECT MAX(replacement_cost) FROM sakila.film; 29.99 (Maior valor encontrado)
 SELECT SUM(replacement_cost) FROM sakila.film;  19984.00 (Soma de todos registros)
 SELECT COUNT(replacement_cost) FROM sakila.film;  1000 registros encontrados (Quantidade)
 ```
-## FILTRANDO E AGRUPANDO 
+### FILTRANDO E AGRUPANDO 
 
 1. GROUP BY - serve para agrupar colunas:
 ```
