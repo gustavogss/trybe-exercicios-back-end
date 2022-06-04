@@ -17,7 +17,7 @@
 6. Os principais banco de dados: são os relacionais baseado em tabelas e os não relacionais baseado em coleções.
 
 
-## SQL ( Structured Query Language ):
+### SQL ( Structured Query Language ):
 
 1. SQL ( Structured Query Language ) é a linguagem mais usada para criar, pesquisar, extrair e também manipular dados dentro de um banco de dados relacional. 
    
@@ -170,7 +170,7 @@ service mysqld restart
 
 [Intalando o MySQL no Linux](https://gustavosouza.dev.br/instalando-configurando-mysql-8-no-ubuntu/)
 
-## MYSQL COM DOCKER
+### MYSQL COM DOCKER
 
 1. Primeiro verifique o status do seu mysql local, se está ativo:
 ```
