@@ -1,4 +1,4 @@
-# ORQUESTRANDO CONTAINERS :rocket:
+# ORQUESTRANDO CONTAINERS COM DOCKER-COMPOSE :rocket:
 
 1. O Docker Compose é uma solução para organizar o funcionamento e a configuração de todas as partes que compõem um sistema.
 
