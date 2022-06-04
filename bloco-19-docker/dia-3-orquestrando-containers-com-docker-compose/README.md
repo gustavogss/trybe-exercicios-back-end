@@ -7,7 +7,7 @@
 - Combinando o Compose com o Netwok e Volumes podemos integrar vários serviços: APIs, front-ends, banco de dados, além de publicá-los com facilidade.
 
 
-##  REDES DOCKER 
+###  REDES DOCKER 
 
 1. Verificando redes existentes no docker: 
    
@@ -100,7 +100,7 @@ docker volume prune
 `VOLUME ["/data"]`
 
 
-## DOCKER COMPOSE :robot:
+### DOCKER COMPOSE :robot:
 
 
 1. Instalação do Docker Compose:
@@ -149,7 +149,7 @@ services:
 
 - unless-stopped: Define que o container sempre seja reiniciado, a menos que o Docker em si seja parado (manualmente ou não). No caso de ser interrompido, ele não reinicia nem depois que o daemon do Docker * seja reiniciado.   
 
-### O daemon do Docker é um processo contínuo, que roda em segundo plano e que gerencia os containers Docker em um host.
+- O daemon do Docker é um processo contínuo, que roda em segundo plano e que gerencia os containers Docker em um host.
 
 4. No contexto de Docker, secret é um dado que não deve ser transmitido por uma rede ou armazenado sem criptografia em um Dockerfile ou no código fonte de sua aplicação, como uma senha ou uma chave privada SSH, por exemplo.
 
@@ -189,7 +189,7 @@ services:
 
 `docker-compose up --build <SERVICE NAME>`
 
-  #### Down - Para parar os services, as redes aqui serão removidas. Mas tudo pode ser criado a partir do comando up:
+- Down - Para parar os services, as redes aqui serão removidas. Mas tudo pode ser criado a partir do comando up:
 
 `docker-compose down`
 
@@ -210,7 +210,7 @@ services:
 `docker-compose logs -f --tail=100 <SERVICE NAME>`
 
 
-## Volumes com docker-compose 
+### Volumes com docker-compose 
 
 1. Para utilizar volumes no arquivo docker-compose.yaml :
 
