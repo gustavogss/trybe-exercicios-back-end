@@ -1,4 +1,4 @@
-## INTRODUÇÃO :rocket:
+# INTRODUÇÃO AO DOCKER :rocket:
 
 1. O Docker Compose é uma solução para organizar o funcionamento e a configuração de todas as partes que compõem um sistema.
 
