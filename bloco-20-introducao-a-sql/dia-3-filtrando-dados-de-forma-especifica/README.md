@@ -14,7 +14,7 @@
   9. NOT NEGAÇÃO
   10. IS  COMPARA COM VALORES BOOLEANOS (TRUE, FALSE, NULL)
 
-## COMPARADORES LÓGICOS SQL 
+### COMPARADORES LÓGICOS SQL 
 
 1. WHERE - Atribui uma condição:
    
@@ -144,7 +144,7 @@ BETWEEN '2005-05-27' AND '2005-07-17';
 - IN x BETWEEN : no caso do IN , você precisa especificar os valores que devem ser incluídos no resultado e, no caso do BETWEEN , você não precisa incluir os valores porque trabalha entre uma faixa de valores.
 
 
-## SQL COM DATAS 
+### SQL COM DATAS 
 
 1. O MySQL , por padrão, usa o formato YYYY-MM-DD (ano/mês/dia) ao armazenar os valores de uma data. 
 
